@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //CharacterController
     public CharacterController controller;
+
+    //Movement
+    private float playerSpeed = 2.0f;
+    private float jumpHeight = 6f;
+    private bool crouch;
+
+    //MovementMakeSmooth
+    private float turnSmoothtime = 0.1f;
+    private float turnSmoothVelocity;
+
+    //Gravity
+    private float gravityValue = -15.0f;
+    
+    //GroundCheck
     private Vector3 playerGravity;
     public Transform Groundcheck;
     public float groundRadius = 2.0f;
     public LayerMask whatIsGround;
-    private float playerSpeed = 2.0f;
-    private float jumpHeight = 6f;
-    private float gravityValue = -15.0f;
-    private float turnSmoothtime = 0.1f;
-    private float turnSmoothVelocity;
-    public Transform Cam;
     private bool grounded;
-    private bool crouch;
+
+    //Objects
+    public Transform Cam;
     private Animator Anim;
+    
 
     private void Start()
     {
@@ -26,12 +38,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        //Set binds and Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
-        grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
+        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;       
 
 
+        //When character movement this code take reference
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
@@ -42,10 +56,13 @@ public class PlayerController : MonoBehaviour
         }
 
 
-            Anim.SetFloat("speed", direction.magnitude);
-            Anim.SetBool("isGrounded", grounded); 
-            Anim.SetBool("crouch", crouch);
+        //Animations
+        Anim.SetFloat("speed", direction.magnitude);
+        Anim.SetBool("isGrounded", grounded); 
+        Anim.SetBool("crouch", crouch);
 
+
+        //Crouch
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             crouch = true;
@@ -59,6 +76,12 @@ public class PlayerController : MonoBehaviour
             controller.height = 1.6f;
         }
 
+
+        //Grounded Check
+        grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
+
+
+        //Jump and Gravity
         if (Input.GetKey(KeyCode.Space) && grounded)
         {
             playerGravity.y = jumpHeight;
@@ -67,9 +90,12 @@ public class PlayerController : MonoBehaviour
         {
             playerGravity.y += gravityValue * Time.deltaTime;
         }
+
         controller.Move(playerGravity * Time.deltaTime);
+
     }
 
+    //GroundCheck
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Ground"))
@@ -77,7 +103,6 @@ public class PlayerController : MonoBehaviour
             grounded = true;
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Ground"))
