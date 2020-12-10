@@ -1138,6 +1138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ce418b21757a44f98b4cdbd975b91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8024692}
+  enemyDistanceRun: 5
   lookRadius: 5
   _agent: {fileID: 1075723810}
 --- !u!54 &1075723812
@@ -1908,6 +1910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Char
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68727796440d7194e9dc432424cdab31,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5465940246521907071, guid: 68727796440d7194e9dc432424cdab31,
         type: 3}
