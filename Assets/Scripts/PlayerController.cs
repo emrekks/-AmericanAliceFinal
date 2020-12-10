@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     //Movement
     private float playerSpeed = 2.0f;
     private float jumpHeight = 6f;
-    private bool crouch;
+    private bool crouch; 
 
     //MovementMakeSmooth
     private float turnSmoothtime = 0.1f;
@@ -47,23 +47,26 @@ public class PlayerController : MonoBehaviour
         //Set binds and Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;       
+        Vector3 direction = new Vector3(horizontal, 0, vertical).normalized;
 
 
+        float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
+        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothtime);
+        transform.rotation = Quaternion.Euler(0f, Cam.eulerAngles.y, 0f);
+       
         //When character movement this code take reference
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothtime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
         }
 
 
+
         //Animations
-        Anim.SetFloat("speed", direction.magnitude);
-        Anim.SetBool("isGrounded", grounded); 
+        Anim.SetFloat("speed.x", vertical);
+        Anim.SetFloat("speed.z", horizontal);
+        Anim.SetBool("isGrounded", grounded);
         Anim.SetBool("crouch", crouch);
 
 
