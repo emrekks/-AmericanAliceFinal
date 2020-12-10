@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
 
     //Movement
-    private float playerSpeed = 2.0f;
+    public float playerSpeed = 2.0f;
     private float jumpHeight = 6f;
     private bool crouch; 
 
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
         //Jump and Gravity
         if (Input.GetKey(KeyCode.Space) && grounded)
         {
+            Anim.SetTrigger("jumping");
             playerGravity.y = jumpHeight;
         }
         else
@@ -100,24 +101,23 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(playerGravity * Time.deltaTime);
-
     }
 
     //GroundCheck
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.gameObject.CompareTag("Ground"))
-        {
-            grounded = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            grounded = false;
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if(other.gameObject.CompareTag("Ground"))
+    //    {
+    //        grounded = true;
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Ground"))
+    //    {
+    //        grounded = false;
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
