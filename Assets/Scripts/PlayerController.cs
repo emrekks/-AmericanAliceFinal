@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //DevilForm
+    public bool devilOpen = false;
+    
+    
     //CharacterController
     public CharacterController controller;
 
@@ -108,6 +113,15 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             grounded = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Devil"))
+        {
+            devilOpen = true;
+            other.gameObject.SetActive(false);
         }
     }
 }
