@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Weapon Controller
+    public WeaponController _weaponController;
+    
+    
     //Player Bigger/Smaller Form
     public bool isSmall = false;
     private Vector3 playerScale;
@@ -105,6 +109,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Anim.SetTrigger("ThrowKnife");
+            _weaponController.ShootBall();
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {

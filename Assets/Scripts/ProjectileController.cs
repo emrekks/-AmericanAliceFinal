@@ -11,8 +11,8 @@ public class ProjectileController : MonoBehaviour
     public GameObject staffPrefab;
 
 
-    private void Start()
+    void Start()
     {
-        //_rigidbody.AddForce();
+        _rigidbody.AddForce(transform.forward * speed, ForceMode.Impulse);
     }
 }

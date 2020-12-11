@@ -19,25 +19,18 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        if (isHandlingWand == true)
-        {
-            if (delay > 0)
-            {
-                delay -= Time.deltaTime;
-            }
-            else if (Input.GetMouseButtonDown(0))
-            {
-                delay = shootDelay;
-                ShootBall();
-            }
-        }
+        
     }
 
     
     public void ShootBall()
     {
-        
+        if (isHandlingWand == true)
+        {
+            Instantiate(ballPrefab);
+        }
     }
+    
     
     
 }
