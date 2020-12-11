@@ -14,8 +14,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
       </list>
     </option>
   </component>
@@ -66,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607607995011</updated>
       <workItem from="1607608220925" duration="11478000" />
+      <workItem from="1607710524670" duration="4736000" />
     </task>
     <servers />
   </component>

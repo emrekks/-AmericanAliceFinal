@@ -12,6 +12,7 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
         </e>
+        <e p="Throwing.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
