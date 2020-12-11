@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     //DevilForm
     public bool devilOpen = false;
+    public float devilFormTimer = 0f;
     
     
     //CharacterController
@@ -43,7 +44,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        
+        if (devilOpen == true)
+        {
+            devilFormTimer += Time.deltaTime;
+            DevilForm();
+        }
+        
         //Set binds and Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -124,7 +131,21 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Devil"))
         {
             devilOpen = true;
+            DevilForm();
             other.gameObject.SetActive(false);
         }
     }
+
+    private void DevilForm()
+    {
+         //DevilForm Upgrades
+         if (devilFormTimer >= 15f) 
+         {
+                devilOpen = false; 
+                devilFormTimer = 0f;
+         }
+         
+    }
+        
 }
+

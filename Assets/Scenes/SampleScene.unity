@@ -1064,6 +1064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ce418b21757a44f98b4cdbd975b91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 8024692}
+  enemyDistanceRun: 5
   lookRadius: 5
   _agent: {fileID: 1075723810}
 --- !u!54 &1075723812

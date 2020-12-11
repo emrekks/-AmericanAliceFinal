@@ -6,7 +6,10 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private PlayerController _playerController;
+    public GameObject player;
+    
+
+    public float enemyDistanceRun;
     
     //Enemy Trigger Radius
     public float lookRadius = 10f;
@@ -24,14 +27,30 @@ public class EnemyController : MonoBehaviour
     {
         float distance = Vector3.Distance(_target.position, transform.position);
 
-        if (distance <= lookRadius)
+        //Enemy Chase
+        if (player.GetComponent<PlayerController>().devilOpen == false)
         {
-            _agent.SetDestination(_target.position);
-
-            if (distance <= _agent.stoppingDistance)
+            if (distance <= lookRadius)
             {
-                //Attack The Target
-                FaceTarget();
+                _agent.SetDestination(_target.position);
+
+                if (distance <= _agent.stoppingDistance)
+                {
+                    //Attack The Target
+                    FaceTarget();
+                }
+            }
+        }
+        
+        //Enemy Run Away
+        else
+        {
+            if (distance < enemyDistanceRun)
+            {
+                Vector3 toPlayer = transform.position - player.transform.position;
+
+                Vector3 newPos = transform.position + toPlayer;
+                _agent.SetDestination(newPos);
             }
         }
     }
@@ -45,6 +64,7 @@ public class EnemyController : MonoBehaviour
     }
 
 
+    //Enemy Distance Gizmos
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
