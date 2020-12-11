@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     //Movement
     public float playerSpeed = 2.0f;
     private float jumpHeight = 6f;
-    private bool crouch; 
+    private bool crouch = false; 
 
     //MovementMakeSmooth
     private float turnSmoothtime = 0.1f;
@@ -44,7 +44,10 @@ public class PlayerController : MonoBehaviour
     //Objects
     public Transform Cam;
     private Animator Anim;
-    
+
+    //Animator Condition
+    private bool ForwardRight = false;
+    private bool ForwardLeft = false;
 
     private void Start()
     {
@@ -83,17 +86,42 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
         }
 
+        //Animation Conditions
 
-        //Animations
-        Anim.SetFloat("speed.x", vertical);
-        Anim.SetFloat("speed.z", horizontal);
+        if(horizontal > 0.01f && vertical > 0.01f)
+        {
+            ForwardRight = true; 
+        }
+        else
+        {
+            ForwardRight = false;
+        }
+
+
+        if (horizontal < -0.01f && vertical > 0.01f)
+        {
+            ForwardLeft = true;
+        }
+        else
+        {
+            ForwardLeft = false;
+        }
+
+        int horizontalInt = Convert.ToInt32(horizontal);
+
+        Anim.SetInteger("HorizontalSpeedInteger", horizontalInt);
+        Anim.SetFloat("VerticalSpeed", vertical);
+        Anim.SetFloat("HorizontalSpeed", horizontal);
         Anim.SetBool("isGrounded", grounded);
-        Anim.SetBool("crouch", crouch);
+        Anim.SetBool("crouch1", crouch);
+        Anim.SetBool("ForwardRunningRight", ForwardRight);
+        Anim.SetBool("ForwardRunningLeft", ForwardLeft);
 
 
         //Crouch
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+            Anim.SetTrigger("crouch");
             crouch = true;
             controller.center = new Vector3(0, 0.56f, 0);
             controller.height = 0.93f;
@@ -134,21 +162,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(playerGravity * Time.deltaTime);
     }
 
-    //GroundCheck
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if(other.gameObject.CompareTag("Ground"))
-    //    {
-    //        grounded = true;
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Ground"))
-    //    {
-    //        grounded = false;
-    //    }
-    //}
 
     private void OnTriggerEnter(Collider other)
     {
