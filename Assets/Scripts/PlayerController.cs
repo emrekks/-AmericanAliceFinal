@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Player Bigger/Smaller Form
+    public bool isSmall = false;
+    private Vector3 playerScale;
+
     //DevilForm
     public bool devilOpen = false;
     public float devilFormTimer = 0f;
+    public bool devilFormBigger = false;
     
     
     //CharacterController
@@ -40,10 +45,16 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Anim = gameObject.GetComponent<Animator>();
+        playerScale = gameObject.transform.localScale;
     }
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            ChangeScale();
+        }
         
         if (devilOpen == true)
         {
@@ -144,15 +155,53 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void ChangeScale()
+    {
+        if (isSmall == false)
+        {
+            gameObject.transform.localScale -=  new Vector3(0.5f,0.5f,0.5f);
+            isSmall = true;
+        }
+        else if (isSmall == true)
+        {
+            gameObject.transform.localScale += new Vector3(0.5f,0.5f,0.5f);
+            isSmall = false;
+        }
+    }
+    
+    
+
     private void DevilForm()
     {
-         //DevilForm Upgrades
-         if (devilFormTimer >= 15f) 
+        if (isSmall == true && devilFormBigger == false)
+        {
+            devilFormBigger = true;
+            gameObject.transform.localScale += new Vector3(1f,1f,1f);
+        }
+        else if (isSmall == false && devilFormBigger == false)
+        {
+            devilFormBigger = true;
+            gameObject.transform.localScale += new Vector3(0.5f,0.5f,0.5f);
+        }
+
+        //DevilForm Upgrades
+         if (devilFormTimer >= 15f)
          {
-                devilOpen = false; 
+                devilOpen = false;
+                devilFormBigger = false;
                 devilFormTimer = 0f;
+                
+                if (isSmall == true)
+                {
+                    devilFormBigger = true;
+                    gameObject.transform.localScale -= new Vector3(1f,1f,1f);
+                }
+                else if (isSmall == false)
+                {
+                    devilFormBigger = true;
+                    gameObject.transform.localScale -= new Vector3(0.5f,0.5f,0.5f);
+                }
          }
-         
     }
         
 }
