@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
         }
 
 
-
         //Animations
         Anim.SetFloat("speed.x", vertical);
         Anim.SetFloat("speed.z", horizontal);
@@ -91,6 +90,15 @@ public class PlayerController : MonoBehaviour
             controller.height = 1.6f;
         }
 
+        //Throwing Knife
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Anim.SetTrigger("ThrowKnife");
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+
+        }
 
         //Grounded Check
         grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
