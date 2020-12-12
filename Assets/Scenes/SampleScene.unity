@@ -2881,7 +2881,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407993357}
-  m_LocalRotation: {x: -0.03990442, y: -0.000000017460778, z: -6.973176e-10, w: 0.9992035}
+  m_LocalRotation: {x: -0.039904397, y: -0.0000000170594, z: -6.812877e-10, w: 0.9992035}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3243,7 +3243,7 @@ GameObject:
   - component: {fileID: 1813070305}
   - component: {fileID: 1813070304}
   m_Layer: 0
-  m_Name: 10
+  m_Name: CrosshairGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3474,6 +3474,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -510752008043309683, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2835915668785823686, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
       propertyPath: m_Name
@@ -3482,7 +3487,7 @@ PrefabInstance:
     - target: {fileID: 2835915668785823686, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2835915668785823690, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
@@ -3547,13 +3552,13 @@ PrefabInstance:
     - target: {fileID: 4900970373395184287, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
       propertyPath: speed
-      value: 200
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4900970373395184287, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
       propertyPath: crosshair
       value: 
-      objectReference: {fileID: 2095863230}
+      objectReference: {fileID: 1833505705}
     - target: {fileID: 4900970373395184287, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
       propertyPath: staffPrefab

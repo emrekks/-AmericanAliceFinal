@@ -12,26 +12,34 @@ public class ProjectileController : MonoBehaviour
     public GameObject crosshair;
     private Transform crossPos;
     //public GameObject cam;
+    private float ballTimer = 0f;
 
     private Transform _target;
     public float attackRange = 10f;
     private GameObject player;
 
 
-    public void Start()
+    void Awake()
     {
         crosshair = GameObject.FindGameObjectWithTag("Crosshair");
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+
+    public void Start()
+    {
         _target = PlayerManager.instance.player.transform;
     }
 
     void Update()
     {
+        ballTimer += Time.deltaTime;
         float distance = Vector3.Distance(_target.position, transform.position);
 
-        if (distance > attackRange)
+        if (distance > attackRange || ballTimer >= 5f)
         {
             gameObject.SetActive(false);
+            ballTimer = 0f;
         }
 
     }

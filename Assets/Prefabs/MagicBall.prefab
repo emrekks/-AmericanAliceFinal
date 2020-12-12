@@ -109,7 +109,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4900970373395184287
 MonoBehaviour:
@@ -128,5 +128,4 @@ MonoBehaviour:
   staffPrefab: {fileID: 919132149155446097, guid: 825e6d4125aad1346bdb5ff34fd0341a,
     type: 3}
   crosshair: {fileID: 0}
-  cam: {fileID: 0}
   attackRange: 15
