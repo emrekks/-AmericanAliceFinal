@@ -11,22 +11,40 @@ public class ProjectileController : MonoBehaviour
     public GameObject staffPrefab;
     public GameObject crosshair;
     private Transform crossPos;
-    public Camera cam;
+    //public GameObject cam;
+
+    private Transform _target;
+    public float attackRange = 10f;
+    private GameObject player;
 
 
     public void Start()
     {
-        cam = FindObjectOfType<Camera>();
-        crossPos = cam.GetComponentInChildren<Transform>();
+        crosshair = GameObject.FindGameObjectWithTag("Crosshair");
+        player = GameObject.FindGameObjectWithTag("Player");
+        _target = PlayerManager.instance.player.transform;
+    }
+
+    void Update()
+    {
+        float distance = Vector3.Distance(_target.position, transform.position);
+
+        if (distance > attackRange)
+        {
+            gameObject.SetActive(false);
+        }
+
     }
 
     void OnBecameVisible()
     {
-        _rigidbody.AddForce((-crossPos.transform.position + transform.forward) * speed, ForceMode.Impulse);
+        _rigidbody.AddForce(crosshair.transform.position * speed, ForceMode.Impulse);
     }
-
-    private void OnBecameInvisible()
+    
+    void OnDrawGizmosSelected()
     {
-        gameObject.SetActive(false);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(player.transform.position,attackRange);
     }
+    
 }

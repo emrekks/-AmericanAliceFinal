@@ -92,7 +92,7 @@ public class WeaponController : MonoBehaviour
             if (!magicBallPool[i].activeInHierarchy)
             {
                 magicBallPool[i].transform.position = magicBallSpawnPoint.transform.position + transform.forward;
-                magicBallPool[i].transform.rotation = magicBallSpawnPoint.transform.rotation;
+                // magicBallPool[i].transform.rotation = magicBallSpawnPoint.transform.rotation;
                 magicBallPool[i].SetActive(true);
                 return;
             }
