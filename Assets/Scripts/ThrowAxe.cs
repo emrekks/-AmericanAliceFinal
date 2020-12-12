@@ -8,25 +8,27 @@ public class ThrowAxe : MonoBehaviour
     public float throwForce = 50;
     public Transform target, curve_point;
     private Vector3 old_pos;
+    public GameObject AxeP;
     private bool isReturning = false;
     private float time;
     public GameObject Alice;
     public Collider AxeCol;
+    private bool onGround = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q) && onGround == false)
         {
             ThrowableAxe();
         }
        
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && onGround == true)
         {
             ReturnAxe();
         }
@@ -52,29 +54,18 @@ public class ThrowAxe : MonoBehaviour
         axe.isKinematic = false;
         axe.AddForce(Camera.main.transform.TransformDirection(Vector3.forward) * throwForce, ForceMode.Impulse);
         axe.AddTorque(axe.transform.TransformDirection(Vector3.forward) * 100, ForceMode.Impulse);
-        StartCoroutine(AxeCoroutineTrue());
     }
 
-    IEnumerator AxeCoroutineFalse()
-    {
-        yield return new WaitForSeconds(0.07f);
-        AxeCol.isTrigger = false;
-    }
 
-    IEnumerator AxeCoroutineTrue()
-    {
-        yield return new WaitForSeconds(0.05f);
-        AxeCol.isTrigger = true;
-    }
 
     void ReturnAxe()
     {
         time = 0f;
-        old_pos = axe.position;
+        old_pos = AxeP.transform.position;
         isReturning = true;
         axe.velocity = Vector3.zero;
         axe.isKinematic = true;
-        //StartCoroutine(AxeCoroutineTrue());
+        onGround = false;
     }
 
     //Reset Axe
@@ -96,7 +87,9 @@ public class ThrowAxe : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-            axe.isKinematic = true;   
+        onGround = true;
+        axe.isKinematic = true;   
     }
+
 
 }
