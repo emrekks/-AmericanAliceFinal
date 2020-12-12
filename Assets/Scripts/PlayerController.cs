@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Anim.SetTrigger("ThrowKnife");
-            _weaponController.ShootBall();
+            //_weaponController.ShootBall();
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {

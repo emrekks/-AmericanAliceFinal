@@ -9,10 +9,18 @@ public class ProjectileController : MonoBehaviour
     public float speed = 5f;
     [SerializeField] private Rigidbody _rigidbody;
     public GameObject staffPrefab;
+    public Vector3 crosshairTransform;
+    public float ballExplosionRadius = 10f;
+    public float upwardsModifier = 5f;
 
 
-    void Start()
+    void OnBecameVisible()
     {
-        _rigidbody.AddForce(transform.forward * speed, ForceMode.Impulse);
+        _rigidbody.AddForceAtPosition(transform.up + transform.forward * speed * 5, crosshairTransform, ForceMode.Impulse);
+    }
+
+    private void OnBecameInvisible()
+    {
+        gameObject.SetActive(false);
     }
 }
