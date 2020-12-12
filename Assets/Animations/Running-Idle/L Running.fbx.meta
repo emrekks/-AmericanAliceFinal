@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: Left Running
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Peasant_Girl
+    second: {fileID: 2100000, guid: 1ea1308d09bdcc2488b1e80740596efe, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
