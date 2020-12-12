@@ -14,7 +14,6 @@
           <e p="ProjectileController.cs" t="Include" />
           <e p="WeaponController.cs" t="Include" />
         </e>
-        <e p="Throwing.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

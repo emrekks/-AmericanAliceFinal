@@ -175,12 +175,12 @@ public class PlayerController : MonoBehaviour
 
     void ChangeScale()
     {
-        if (isSmall == false)
+        if (isSmall == false && devilFormBigger == false)
         {
             gameObject.transform.localScale -=  new Vector3(0.5f,0.5f,0.5f);
             isSmall = true;
         }
-        else if (isSmall == true)
+        else if (isSmall == true && devilFormBigger == false)
         {
             gameObject.transform.localScale += new Vector3(0.5f,0.5f,0.5f);
             isSmall = false;
@@ -209,14 +209,12 @@ public class PlayerController : MonoBehaviour
                 devilFormBigger = false;
                 devilFormTimer = 0f;
                 
-                if (isSmall == true)
+                if (isSmall == true && devilFormBigger == false)
                 {
-                    devilFormBigger = true;
                     gameObject.transform.localScale -= new Vector3(1f,1f,1f);
                 }
-                else if (isSmall == false)
+                else if (isSmall == false && devilFormBigger == false)
                 {
-                    devilFormBigger = true;
                     gameObject.transform.localScale -= new Vector3(0.5f,0.5f,0.5f);
                 }
          }
