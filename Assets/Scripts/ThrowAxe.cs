@@ -4,77 +4,93 @@ using UnityEngine;
 
 public class ThrowAxe : MonoBehaviour
 {
-    public Rigidbody axe;
+    public Rigidbody axeRb;
+
     public float throwForce = 50;
+
     public Transform target, curve_point;
-    private Vector3 old_pos;
     public GameObject AxeP;
-    private bool isReturning = false;
-    private float time;
     public GameObject Alice;
     public Collider AxeCol;
-    private bool onGround = false;
+
+    private Vector3 origLocPos;
+    private Vector3 origLocRot;
+    private Vector3 pullPosition;
+
+    [Header("Public References")]
+    public Transform weapon;
+    public Transform hand;
+    public Transform curvePoint;
+
+    private float time;
+    
+    private bool hitedWall = false;
+    private bool isReturning = false;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        origLocPos = weapon.localPosition;
+        origLocRot = weapon.localEulerAngles;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q) && onGround == false)
+        if (Input.GetKeyUp(KeyCode.Q) && hitedWall == false)
         {
             ThrowableAxe();
         }
        
-        if (Input.GetKeyUp(KeyCode.E) && onGround == true)
+        if (Input.GetKeyUp(KeyCode.E) && hitedWall == true)
         {
-            ReturnAxe();
+            WeaponStartPull();
         }
 
         if (isReturning)
         {
             if(time < 1f)
             {
-                axe.position = Backtohandwcurve(time, old_pos, curve_point.position, target.position);
-                axe.rotation = Quaternion.Slerp(axe.transform.rotation, target.rotation, 50 * Time.deltaTime);
-                time += Time.deltaTime;                
+                weapon.position = Backtohandwcurve(time, pullPosition, curve_point.position, target.position);
+                //axeRb.rotation = Quaternion.Slerp(axeRb.transform.rotation, target.rotation, 50 * Time.deltaTime);
+                time += Time.deltaTime * 1.5f;                
             }
             else
             {
-                ResetAxe();
+                WeaponCatch();
             }
         }
     }
 
     void ThrowableAxe()
     {
-        axe.transform.parent = null;
-        axe.isKinematic = false;
-        axe.AddForce(Camera.main.transform.TransformDirection(Vector3.forward) * throwForce, ForceMode.Impulse);
-        axe.AddTorque(axe.transform.TransformDirection(Vector3.forward) * 100, ForceMode.Impulse);
+        axeRb.transform.parent = null;
+        axeRb.isKinematic = false;
+        axeRb.AddTorque(axeRb.transform.TransformDirection(Vector3.forward) * 100, ForceMode.VelocityChange);
+        axeRb.AddForce(Camera.main.transform.forward * throwForce + transform.up * 2, ForceMode.Impulse);
+        //axeRb.AddForce(Camera.main.transform.TransformDirection(Vector3.forward) * throwForce, ForceMode.Impulse);
+
     }
 
 
 
-    void ReturnAxe()
+    void WeaponStartPull()
     {
         time = 0f;
-        old_pos = AxeP.transform.position;
+        pullPosition = weapon.position;
         isReturning = true;
-        axe.velocity = Vector3.zero;
-        axe.isKinematic = true;
-        onGround = false;
+        axeRb.velocity = Vector3.zero;
+        axeRb.isKinematic = true;
+        hitedWall = false;
     }
 
     //Reset Axe
-    void ResetAxe()
+    void WeaponCatch()
     {
-        isReturning = false;        
-        axe.transform.parent = Alice.transform;
-        axe.position = target.position;
-        axe.rotation = target.rotation;
+        isReturning = false;
+        axeRb.transform.parent = Alice.transform;
+        weapon.localEulerAngles = origLocRot;
+        weapon.localPosition = origLocPos;
     }
     Vector3 Backtohandwcurve(float t, Vector3 p0, Vector3 p1, Vector3 p2)
     {
@@ -87,8 +103,16 @@ public class ThrowAxe : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        onGround = true;
-        axe.isKinematic = true;   
+        hitedWall = true;
+        axeRb.isKinematic = true;
+        //if (gameObject.name == "AliceChar")
+        //{
+        //    AxeCol.isTrigger = true;
+        //}
+        //else
+        //{
+        //    AxeCol.isTrigger = false;
+        //}
     }
 
 
