@@ -9,12 +9,20 @@ public class ProjectileController : MonoBehaviour
     public float speed = 50f;
     [SerializeField] private Rigidbody _rigidbody;
     public GameObject staffPrefab;
-    public Transform crosshair;
+    public GameObject crosshair;
+    private Transform crossPos;
+    public Camera cam;
 
+
+    public void Start()
+    {
+        cam = FindObjectOfType<Camera>();
+        crossPos = cam.GetComponentInChildren<Transform>();
+    }
 
     void OnBecameVisible()
     {
-        _rigidbody.AddForce( crosshair.transform.position * speed, ForceMode.Impulse);
+        _rigidbody.AddForce((-crossPos.transform.position + transform.forward) * speed, ForceMode.Impulse);
     }
 
     private void OnBecameInvisible()

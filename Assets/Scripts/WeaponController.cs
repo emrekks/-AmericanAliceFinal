@@ -16,9 +16,14 @@ public class WeaponController : MonoBehaviour
     private float delay = 0f;
     public bool isHandlingWand = false;
 
-    public CinemachinePath path;
-    
-    
+    public CinemachineFreeLook cam;
+    private float maxFOV = 60;
+    private float minFOV = 45;
+    public bool isAim = false;
+
+    public Animator anim;
+
+
 
     void Start()
     {
@@ -35,6 +40,8 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
+        anim.SetBool("isAim", isAim);
+        
         //Attack
         if (delay > 0)
         {
@@ -48,7 +55,29 @@ public class WeaponController : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
+            isAim = true;
+            cam.m_Lens.FieldOfView = Mathf.Lerp(cam.m_Lens.FieldOfView, minFOV, 0.1f);
+
+
+            // cam.m_Lens.FieldOfView = 45f;
+
+            // for (int i = 60; i > 45; i--)
+            // {
+            //     camFOVTimer -= Time.deltaTime;
+            // }
+        }
+        else
+        {
+            isAim = false;
+            cam.m_Lens.FieldOfView = Mathf.Lerp(cam.m_Lens.FieldOfView, maxFOV, 0.1f);
             
+            
+            // cam.m_Lens.FieldOfView = 60f;
+            
+            // for (int i = 45; i > 60; i++)
+            // {
+            //     camFOVTimer += Time.deltaTime;
+            // }
         }
         
         

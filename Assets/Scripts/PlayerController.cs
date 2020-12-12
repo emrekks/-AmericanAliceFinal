@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
     {
         Anim = gameObject.GetComponent<Animator>();
         playerScale = gameObject.transform.localScale;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
