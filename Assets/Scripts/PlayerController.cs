@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
             devilFormTimer += Time.deltaTime;
             DevilForm();
         }
-        
+
         //Set binds and Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
         float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothtime);
         transform.rotation = Quaternion.Euler(0f, Cam.eulerAngles.y, 0f);
-       
+
         //When character movement this code take reference
         if (direction.magnitude >= 0.1f)
         {
