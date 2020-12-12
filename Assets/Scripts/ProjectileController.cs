@@ -38,7 +38,7 @@ public class ProjectileController : MonoBehaviour
 
     void OnBecameVisible()
     {
-        _rigidbody.AddForce((transform.forward * speed) + crosshair.transform.position, ForceMode.Impulse);
+        _rigidbody.AddForceAtPosition(transform.forward * speed,crosshair.transform.position, ForceMode.Impulse);
     }
     
     void OnDrawGizmosSelected()
