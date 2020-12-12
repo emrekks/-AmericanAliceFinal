@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
@@ -14,6 +15,10 @@ public class WeaponController : MonoBehaviour
 
     private float delay = 0f;
     public bool isHandlingWand = false;
+
+    public CinemachinePath path;
+    
+    
 
     void Start()
     {
@@ -30,7 +35,7 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-
+        //Attack
         if (delay > 0)
         {
             delay -= Time.deltaTime;
@@ -40,6 +45,13 @@ public class WeaponController : MonoBehaviour
             delay = shootDelay;
             ShootBall();
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            
+        }
+        
+        
         
     }
 
