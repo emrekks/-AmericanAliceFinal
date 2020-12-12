@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private bool ForwardRight = false;
     private bool ForwardLeft = false;
 
+
     private void Start()
     {
         Anim = gameObject.GetComponent<Animator>();
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
 
         float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
-        float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothtime);
+        //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothtime);
         transform.rotation = Quaternion.Euler(0f, Cam.eulerAngles.y, 0f);
 
         //When character movement this code take reference
@@ -88,14 +89,6 @@ public class PlayerController : MonoBehaviour
 
         //Animation Conditions
 
-        if(horizontal > 0.01f && vertical > 0.01f)
-        {
-            ForwardRight = true; 
-        }
-        else
-        {
-            ForwardRight = false;
-        }
 
 
         if (horizontal < -0.01f && vertical > 0.01f)
