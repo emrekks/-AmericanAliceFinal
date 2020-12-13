@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
     public Collider axeCol;
     public Collider ballCol;
 
+    private EnemyController enemyController;
+
 
     //Enemy Move Radius
     private float moveTimer = 0f;
@@ -55,6 +57,7 @@ public class EnemyController : MonoBehaviour
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
+        enemyController = GetComponent<EnemyController>();
     }
 
     void Update()
@@ -164,7 +167,7 @@ public class EnemyController : MonoBehaviour
         isDead = true;
         Anim.SetBool("death",isDead);
         // Anim.SetTrigger("death");
-        //gameObject.SetActive(false);
+        enemyController.enabled = false;
     }
 
 
