@@ -88,8 +88,16 @@ public class EnemyController : MonoBehaviour
             
             if (distance <= attackRadius)
             {
-                Anim.SetTrigger("attack");
+                isAttack = true;
+                _agent.speed = 0;
             }
+            else
+            {
+                _agent.speed = 2;
+                isAttack = false;
+            }
+            
+            Anim.SetBool("attack",isAttack);
         }
         
         //Enemy Run Away
