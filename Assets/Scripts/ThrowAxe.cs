@@ -66,7 +66,8 @@ public class ThrowAxe : MonoBehaviour
     {
         axeRb.transform.parent = null;
         axeRb.isKinematic = false;
-        axeRb.AddTorque(axeRb.transform.TransformDirection(Vector3.forward) * 100, ForceMode.VelocityChange);
+        // axeRb.AddTorque(axeRb.transform.TransformDirection(Vector3.forward) * 100, ForceMode.VelocityChange);
+        AxeP.transform.localEulerAngles += Vector3.forward * -1400 * Time.deltaTime;
         axeRb.AddForce(Camera.main.transform.forward * throwForce + transform.up * 2, ForceMode.Impulse);
         //axeRb.AddForce(Camera.main.transform.TransformDirection(Vector3.forward) * throwForce, ForceMode.Impulse);
 
