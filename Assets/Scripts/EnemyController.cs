@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Analytics;
 using Random = System.Random;
 
 public class EnemyController : MonoBehaviour
@@ -23,7 +24,10 @@ public class EnemyController : MonoBehaviour
 
 
     public bool playerSeen = false;
-        
+
+    public Animator Anim;
+
+    public float enemyAttackTimer = 0f;
     
     
     //Enemy Move Radius
@@ -33,6 +37,9 @@ public class EnemyController : MonoBehaviour
 
     //Enemy Trigger Radius
     public float lookRadius = 10f;
+    
+    //Enemy Attack Radius
+    public float attackRadius = 1f;
 
     private Transform _target;
     public NavMeshAgent _agent;
@@ -46,6 +53,8 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(_target.position, transform.position);
+        
+        //float attackDistance = Vector3.Distance(_target.position, transform.position);
 
         //Enemy Chase
         if (player.GetComponent<PlayerController>().devilOpen == false)
@@ -57,13 +66,20 @@ public class EnemyController : MonoBehaviour
 
                 if (distance <= _agent.stoppingDistance)
                 {
-                    //Attack The Target
                     FaceTarget();
                 }
             }
             else
             {
                 playerSeen = false;
+            }
+            
+            
+            if (distance <= attackRadius)
+            {
+                Debug.Log("Attacked");
+                Anim.SetTrigger("Attack");
+                
             }
         }
         
@@ -119,5 +135,8 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,lookRadius);
+        
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position,attackRadius);
     }
 }

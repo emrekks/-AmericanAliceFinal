@@ -2277,6 +2277,7 @@ MonoBehaviour:
   enemyBlockTimer: 0
   playerSeen: 0
   lookRadius: 5
+  attackRadius: 2
   _agent: {fileID: 1075723810}
 --- !u!54 &1075723812
 Rigidbody:
@@ -2660,7 +2661,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214609169}
-  m_LocalRotation: {x: -0.039904397, y: 0.000000017059403, z: 6.812878e-10, w: 0.9992035}
+  m_LocalRotation: {x: -0.03990442, y: -0.000000017460778, z: -6.973176e-10, w: 0.9992035}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2936,7 +2937,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407993357}
-  m_LocalRotation: {x: -0.03990442, y: -0.000000017460781, z: -6.9731776e-10, w: 0.9992035}
+  m_LocalRotation: {x: -0.039904397, y: 0.0000000170594, z: 6.812877e-10, w: 0.9992035}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
