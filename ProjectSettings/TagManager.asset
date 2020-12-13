@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Devil
   - Crosshair
+  - ProjectileSpawnPoint
   layers:
   - Default
   - TransparentFX

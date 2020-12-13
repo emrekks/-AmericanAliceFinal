@@ -9,14 +9,14 @@ public class ProjectileController : MonoBehaviour
     public float speed = 50f;
     [SerializeField] private Rigidbody _rigidbody;
     public GameObject staffPrefab;
-    public GameObject crosshair;
+    private GameObject crosshair;
     private Transform crossPos;
-    //public GameObject cam;
-    private float ballTimer = 0f;
+    // public GameObject magicBallSpawnPoint;
 
     private Transform _target;
     public float attackRange = 10f;
     private GameObject player;
+    private float ballTimer = 0f;
 
 
     void Awake()
@@ -40,13 +40,15 @@ public class ProjectileController : MonoBehaviour
         {
             gameObject.SetActive(false);
             ballTimer = 0f;
+            _rigidbody.isKinematic = true;
         }
 
     }
 
     void OnBecameVisible()
     {
-        _rigidbody.AddForceAtPosition(transform.forward * speed,crosshair.transform.position, ForceMode.Impulse);
+        _rigidbody.isKinematic = false;
+        _rigidbody.AddForceAtPosition(crosshair.transform.forward/*crosshair.transform.position*/ * speed,crosshair.transform.position, ForceMode.Impulse);
     }
     
     void OnDrawGizmosSelected()
