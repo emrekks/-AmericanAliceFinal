@@ -49,8 +49,16 @@ public class ProjectileController : MonoBehaviour
         _rigidbody.isKinematic = false;
         _rigidbody.AddForceAtPosition(crosshair.transform.forward * speed,crosshair.transform.position, ForceMode.Impulse);
     }
-    
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;

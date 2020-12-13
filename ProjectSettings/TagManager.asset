@@ -8,6 +8,7 @@ TagManager:
   - Devil
   - Crosshair
   - ProjectileSpawnPoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
