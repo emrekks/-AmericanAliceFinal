@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public float devilFormTimer = 0f;
     public bool devilFormBigger = false;
     
-    
+
     //CharacterController
     public CharacterController controller;
 
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
     //MovementMakeSmooth
     private float turnSmoothtime = 0.1f;
     private float turnSmoothVelocity;
+
 
     //Gravity
     private float gravityValue = -15.0f;
@@ -60,7 +62,7 @@ public class PlayerController : MonoBehaviour
     //Animator Condition
     private bool ForwardRight = false;
     private bool ForwardLeft = false;
-
+    private int randomAnim = 0;
 
     private void Start()
     {
@@ -125,7 +127,7 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("crouch1", crouch);
         Anim.SetBool("ForwardRunningRight", ForwardRight);
         Anim.SetBool("ForwardRunningLeft", ForwardLeft);
-
+        Anim.SetInteger("RandomAttack", randomAnim);
 
         //Crouch
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -191,14 +193,26 @@ public class PlayerController : MonoBehaviour
         {
             isHandlingAxe = false;
         }
-        
+
+        if (Input.GetMouseButtonDown(0) && isHandlingAxe == true && !Input.GetMouseButton(1))
+        {
+            randomAnim = Random.Range(1,3);
+            Anim.SetBool("AttackMelee", true);
+        }
+
+        if (Input.GetMouseButtonUp(0) && isHandlingAxe == true && !Input.GetMouseButton(1))
+        {
+            Anim.SetBool("AttackMelee", false);
+        }
+
+
         if (Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == false && isHandlingAxe == true)
         {          
             Anim.SetTrigger("Throw");
             Physics.IgnoreCollision(Character, Axe, true);
         }
 
-        if (/*Input.GetKeyUp(KeyCode.E) && _throwAxe.hitedWall == true*/Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == true && isHandlingAxe==true)
+        if (Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == true && isHandlingAxe==true)
         {
             _throwAxe.WeaponStartPull();
 
@@ -259,6 +273,15 @@ public class PlayerController : MonoBehaviour
         _weaponController.ShootBall();
     }
 
+    private void resetRandom()
+    {
+        randomAnim = 0;
+    }
+
+    private void AttackMeleeFalse()
+    {
+        Anim.SetBool("AttackMelee", false);
+    }
     private void DevilForm()
     {
         if (isSmall == true && devilFormBigger == false)
