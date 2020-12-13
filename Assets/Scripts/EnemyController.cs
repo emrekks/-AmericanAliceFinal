@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
 
     public float enemyAttackTimer = 0f;
     private bool isAttack = false;
+    private bool isBlock = false;
 
     public Collider axeCol;
     public Collider ballCol;
@@ -98,6 +99,7 @@ public class EnemyController : MonoBehaviour
             }
             
             Anim.SetBool("attack",isAttack);
+            Anim.SetBool("block",isBlock);
         }
         
         //Enemy Run Away
@@ -142,14 +144,20 @@ public class EnemyController : MonoBehaviour
     //Enemy Block
     void EnemyBlock()
     {
-        if (enemyHealth < 50)
+        if (enemyHealth < 100)
         {
+            isBlock = true;
             enemyBlockTimer += Time.deltaTime;
 
             if (enemyBlockTimer <= 3f)
             {
-                //Block Animation
+                
+                
                 enemyArmor = enemyArmor + 5;
+            }
+            else
+            {
+                isBlock = false;
             }
         }
     }
