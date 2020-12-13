@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     //Weapon Controller
-    public WeaponController _weaponController;
-    
-    
+    private WeaponController _weaponController;
+    private ThrowAxe _throwAxe;
+
     //Player Bigger/Smaller Form
     public bool isSmall = false;
     private Vector3 playerScale;
@@ -41,9 +41,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool grounded;
 
+    private float delay = 0f;
+    public float shootDelay = 0.1f;
+
     //Objects
     public Transform Cam;
     private Animator Anim;
+    public Collider Character, Axe;
 
     //Animator Condition
     private bool ForwardRight = false;
@@ -52,6 +56,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        _weaponController = GameObject.FindObjectOfType<WeaponController>();
+        _throwAxe = GameObject.FindObjectOfType<ThrowAxe>();
         Anim = gameObject.GetComponent<Animator>();
         playerScale = gameObject.transform.localScale;
         Cursor.visible = false;
@@ -89,9 +95,10 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
         }
 
+
+        
+
         //Animation Conditions
-
-
 
         if (horizontal < -0.01f && vertical > 0.01f)
         {
@@ -128,16 +135,32 @@ public class PlayerController : MonoBehaviour
             controller.height = 1.6f;
         }
 
-        //Throwing Knife
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        //Magic
+        //Attack
+        if (delay > 0)
         {
-            Anim.SetTrigger("ThrowKnife");
-            //_weaponController.ShootBall();
+            delay -= Time.deltaTime;
         }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        else if (Input.GetMouseButtonDown(0))
         {
+            Anim.SetTrigger("Magic");
+            delay = shootDelay;
+        }
+
+
+        //Throwing Axe
+        if (Input.GetKeyUp(KeyCode.Q) && _throwAxe.hitedWall == false)
+        {          
+            Anim.SetTrigger("Throw");
+            Physics.IgnoreCollision(Character, Axe, true);
+        }
+
+        if (Input.GetKeyUp(KeyCode.E) && _throwAxe.hitedWall == true)
+        {
+            _throwAxe.WeaponStartPull();
 
         }
+
 
         //Grounded Check
         grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
@@ -182,7 +205,15 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    
+    private void Throwing()
+    {
+        _throwAxe.ThrowableAxe();
+    }
+
+    private void magic()
+    {
+        _weaponController.ShootBall();
+    }
 
     private void DevilForm()
     {

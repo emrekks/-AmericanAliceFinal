@@ -42,16 +42,16 @@ public class WeaponController : MonoBehaviour
     {
         anim.SetBool("isAim", isAim);
         
-        //Attack
-        if (delay > 0)
-        {
-            delay -= Time.deltaTime;
-        }
-        else if (Input.GetMouseButtonDown(0))
-        {
-            delay = shootDelay;
-            ShootBall();
-        }
+        ////Attack
+        //if (delay > 0)
+        //{
+        //    delay -= Time.deltaTime;
+        //}
+        //else if (Input.GetMouseButtonDown(0))
+        //{
+        //    delay = shootDelay;
+        //    ShootBall();
+        //}
 
         if (Input.GetMouseButton(1))
         {
