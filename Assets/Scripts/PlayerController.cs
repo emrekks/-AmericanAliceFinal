@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
     //Weapon Controller
     private WeaponController _weaponController;
     private ThrowAxe _throwAxe;
+    
+    //Axe
+    public bool isHandlingAxe = false;
+    public GameObject axeObject;
 
     //Player Bigger/Smaller Form
     public bool isSmall = false;
@@ -41,8 +45,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool grounded;
 
+    //Magic Staff
     private float delay = 0f;
     public float shootDelay = 0.1f;
+    public bool isAttackingStaff = false;
+    public bool isHandlingWand = false;
+    public GameObject staff;
 
     //Objects
     public Transform Cam;
@@ -99,7 +107,6 @@ public class PlayerController : MonoBehaviour
         
 
         //Animation Conditions
-
         if (horizontal < -0.01f && vertical > 0.01f)
         {
             ForwardLeft = true;
@@ -135,27 +142,63 @@ public class PlayerController : MonoBehaviour
             controller.height = 1.6f;
         }
 
-        //Magic
-        //Attack
-        if (delay > 0)
+        //Weapon Selection
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            delay -= Time.deltaTime;
+            axeObject.SetActive(true);
+            staff.SetActive(false);
         }
-        else if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Anim.SetTrigger("Magic");
-            delay = shootDelay;
+            axeObject.SetActive(false);
+            staff.SetActive(true);
+        }
+        
+
+        //Magic
+        if (staff.activeInHierarchy)
+        {
+            isHandlingWand = true;
+        }
+        else
+        {
+            isHandlingWand = false;
+        }
+        
+        if (isAttackingStaff == false && isHandlingWand == true)
+        {
+            if (delay > 0)
+            {
+                delay -= Time.deltaTime;
+            }
+            else if (Input.GetMouseButtonDown(0))
+            {
+                isAttackingStaff = true;
+                Anim.SetTrigger("Magic");
+                delay = shootDelay;
+               
+            }
+            isAttackingStaff = false;
         }
 
 
         //Throwing Axe
-        if (Input.GetKeyUp(KeyCode.Q) && _throwAxe.hitedWall == false)
+        if (axeObject.activeInHierarchy)
+        {
+            isHandlingAxe = true;
+        }
+        else
+        {
+            isHandlingAxe = false;
+        }
+        
+        if (Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == false && isHandlingAxe == true)
         {          
             Anim.SetTrigger("Throw");
             Physics.IgnoreCollision(Character, Axe, true);
         }
 
-        if (Input.GetKeyUp(KeyCode.E) && _throwAxe.hitedWall == true)
+        if (/*Input.GetKeyUp(KeyCode.E) && _throwAxe.hitedWall == true*/Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == true && isHandlingAxe==true)
         {
             _throwAxe.WeaponStartPull();
 
@@ -164,6 +207,7 @@ public class PlayerController : MonoBehaviour
 
         //Grounded Check
         grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
+        
 
 
         //Jump and Gravity

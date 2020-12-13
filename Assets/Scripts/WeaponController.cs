@@ -14,7 +14,6 @@ public class WeaponController : MonoBehaviour
     public GameObject magicBallSpawnPoint;
 
     private float delay = 0f;
-    public bool isHandlingWand = false;
 
     public CinemachineFreeLook cam;
     private float maxFOV = 60;

@@ -15,10 +15,10 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ThrowAxe.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +77,7 @@
       <workItem from="1607796284006" duration="5342000" />
       <workItem from="1607805273625" duration="1361000" />
       <workItem from="1607808164763" duration="10136000" />
+      <workItem from="1607860605136" duration="3383000" />
     </task>
     <servers />
   </component>

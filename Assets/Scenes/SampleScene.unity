@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 8935555183827017391, guid: f9216eaa64ea4454bb0e4b8ec0790f7e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 384141313679384997, guid: f9216eaa64ea4454bb0e4b8ec0790f7e, type: 3}
@@ -842,7 +842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: c160772856436f4418a29e03faa16e3e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: c160772856436f4418a29e03faa16e3e, type: 3}
       propertyPath: m_RootOrder
@@ -2316,7 +2316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075723809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.5, y: -0.58, z: -9.21}
+  m_LocalPosition: {x: 0, y: -1, z: -7.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1076938531}
@@ -2349,7 +2349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1076938530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.6, y: 2, z: 0.6}
   m_Children: []
   m_Father: {fileID: 1075723814}
@@ -2660,7 +2660,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214609169}
-  m_LocalRotation: {x: -0.03990442, y: -0.000000017460778, z: -6.973176e-10, w: 0.9992035}
+  m_LocalRotation: {x: -0.039904397, y: 0.000000017059403, z: 6.812878e-10, w: 0.9992035}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2686,6 +2686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf1390844e7d7b47a427dbce05fc834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHandlingAxe: 1
+  axeObject: {fileID: 110959402}
   isSmall: 0
   devilOpen: 0
   devilFormTimer: 0
@@ -2698,6 +2700,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   shootDelay: 0.1
+  isAttackingStaff: 0
+  isHandlingWand: 0
+  staff: {fileID: 1986185939}
   Cam: {fileID: 963194228}
   Character: {fileID: 1214942656}
   Axe: {fileID: 110959405}
@@ -2761,7 +2766,6 @@ MonoBehaviour:
     type: 3}
   size: 5
   magicBallSpawnPoint: {fileID: 1935885985}
-  isHandlingWand: 1
   cam: {fileID: 437121433}
   isAim: 0
   anim: {fileID: 1813070304}
@@ -3482,6 +3486,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 885059977}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1986185939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8935555183827017391, guid: f9216eaa64ea4454bb0e4b8ec0790f7e,
+    type: 3}
+  m_PrefabInstance: {fileID: 373124269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2095863229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,7 +3549,7 @@ PrefabInstance:
     - target: {fileID: 2835915668785823686, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2835915668785823690, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
         type: 3}
