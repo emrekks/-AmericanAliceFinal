@@ -28,8 +28,9 @@ public class EnemyController : MonoBehaviour
     public Animator Anim;
 
     public float enemyAttackTimer = 0f;
-    
-    
+    private bool isAttack = false;
+
+
     //Enemy Move Radius
     private float moveTimer = 0f;
     private float moveX = -10;
@@ -61,6 +62,7 @@ public class EnemyController : MonoBehaviour
         {
             if (distance <= lookRadius)
             {
+                Anim.SetFloat("speed",_agent.speed);
                 playerSeen = true;
                 _agent.SetDestination(_target.position);
 
@@ -78,7 +80,8 @@ public class EnemyController : MonoBehaviour
             if (distance <= attackRadius)
             {
                 Debug.Log("Attacked");
-                Anim.SetTrigger("Attack");
+                isAttack = true;
+                //Anim.SetTrigger("attack" (isAttack));
                 
             }
         }
@@ -112,6 +115,9 @@ public class EnemyController : MonoBehaviour
     }
 
 
+    //Anim.SetTrigger("attack" (isAttack));
+    
+    
     //Enemy Block
     void EnemyBlock()
     {
