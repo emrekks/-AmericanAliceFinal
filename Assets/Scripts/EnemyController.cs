@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Analytics;
@@ -27,8 +28,13 @@ public class EnemyController : MonoBehaviour
 
     public Animator Anim;
 
+    private bool isDead = false;
+
     public float enemyAttackTimer = 0f;
     private bool isAttack = false;
+
+    public Collider axeCol;
+    public Collider ballCol;
 
 
     //Enemy Move Radius
@@ -79,10 +85,7 @@ public class EnemyController : MonoBehaviour
             
             if (distance <= attackRadius)
             {
-                Debug.Log("Attacked");
-                isAttack = true;
-                //Anim.SetTrigger("attack" (isAttack));
-                
+                Anim.SetTrigger("attack");
             }
         }
         
@@ -102,7 +105,12 @@ public class EnemyController : MonoBehaviour
             {
                 EnemyBlock();
             }
-            
+        }
+        
+        //Enemy Death
+        if (enemyHealth <= 0)
+        {
+            EnemyDeath();
         }
     }
 
@@ -115,7 +123,9 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    //Anim.SetTrigger("attack" (isAttack));
+    
+    
+    
     
     
     //Enemy Block
@@ -131,6 +141,30 @@ public class EnemyController : MonoBehaviour
                 enemyArmor = enemyArmor + 5;
             }
         }
+    }
+
+    void EnemyHit()
+    {
+        Anim.SetTrigger("hit");
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (axeCol.gameObject || ballCol.gameObject)
+        {
+            enemyHealth -= /*playerDamage*/ 50;
+            EnemyHit();
+        }
+
+    }
+
+
+    void EnemyDeath()
+    {
+        isDead = true;
+        Anim.SetBool("death",isDead);
+        // Anim.SetTrigger("death");
+        //gameObject.SetActive(false);
     }
 
 
