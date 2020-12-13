@@ -123,9 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00750ce66d123d54f906b139ea794c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 15
   _rigidbody: {fileID: -510752008043309683}
   staffPrefab: {fileID: 919132149155446097, guid: 825e6d4125aad1346bdb5ff34fd0341a,
     type: 3}
-  crosshair: {fileID: 0}
   attackRange: 15

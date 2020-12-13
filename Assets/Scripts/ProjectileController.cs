@@ -42,14 +42,14 @@ public class ProjectileController : MonoBehaviour
             ballTimer = 0f;
             _rigidbody.isKinematic = true;
         }
-
     }
 
-    void OnBecameVisible()
+    void OnEnable()
     {
         _rigidbody.isKinematic = false;
-        _rigidbody.AddForceAtPosition(crosshair.transform.forward/*crosshair.transform.position*/ * speed,crosshair.transform.position, ForceMode.Impulse);
+        _rigidbody.AddForceAtPosition(crosshair.transform.forward * speed,crosshair.transform.position, ForceMode.Impulse);
     }
+    
     
     void OnDrawGizmosSelected()
     {
