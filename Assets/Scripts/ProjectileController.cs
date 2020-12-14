@@ -12,6 +12,7 @@ public class ProjectileController : MonoBehaviour
     private GameObject crosshair;
     private Transform crossPos;
     // public GameObject magicBallSpawnPoint;
+    private Vector3 up;
 
     private Transform _target;
     public float attackRange = 10f;
@@ -29,6 +30,7 @@ public class ProjectileController : MonoBehaviour
     public void Start()
     {
         _target = PlayerManager.instance.player.transform;
+        up = new Vector3(0,0.1f,0);
     }
 
     void Update()
@@ -47,7 +49,7 @@ public class ProjectileController : MonoBehaviour
     void OnEnable()
     {
         _rigidbody.isKinematic = false;
-        _rigidbody.AddForceAtPosition(crosshair.transform.forward * speed,crosshair.transform.position, ForceMode.Impulse);
+        _rigidbody.AddForceAtPosition((crosshair.transform.forward + up) * speed,crosshair.transform.position, ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision other)
