@@ -237,7 +237,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
         //Grounded Check
         grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
 
@@ -275,7 +274,7 @@ public class PlayerController : MonoBehaviour
         if (noClick >= 3)
         {
             Anim.SetBool("AttackMelee3", true);
-            controller.Move(moveDirection * Time.deltaTime * dashSpeed);
+            controller.Move(moveDir * Time.deltaTime * 1000f);
 
         }
         else
