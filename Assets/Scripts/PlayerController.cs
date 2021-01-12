@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private float lastClickedTime;
     private int noClick;
     private float maxComboDelay = 1.5f;
-    private Vector3 Attackmove;
+
 
     //Player Bigger/Smaller Form
     public bool isSmall = false;
@@ -36,10 +36,6 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight = 6f;
     private bool crouch = false;
     private Vector3 moveDir;
-
-    //MovementMakeSmooth
-    private float turnSmoothtime = 0.1f;
-    private float turnSmoothVelocity;
 
 
     //Gravity
@@ -188,8 +184,7 @@ public class PlayerController : MonoBehaviour
             {
                 isAttackingStaff = true;
                 Anim.SetTrigger("Magic");
-                delay = shootDelay;
-               
+                delay = shootDelay; 
             }
             isAttackingStaff = false;
         }
@@ -220,6 +215,7 @@ public class PlayerController : MonoBehaviour
             if(noClick == 1)
             {
                 Anim.SetBool("AttackMelee", true);
+                Axe.isTrigger = true;
             }
             noClick = Mathf.Clamp(noClick, 0, 3);
         }
@@ -259,11 +255,12 @@ public class PlayerController : MonoBehaviour
     {
         if(noClick >= 2)
         {
-            
+            Axe.isTrigger = true;
             Anim.SetBool("AttackMelee2", true);
         }
         else
         {
+            Axe.isTrigger = false;
             Anim.SetBool("AttackMelee", false);
             noClick = 0;
         }
@@ -274,13 +271,13 @@ public class PlayerController : MonoBehaviour
         if (noClick >= 3)
         {
             Anim.SetBool("AttackMelee3", true);
-            controller.Move(moveDir * Time.deltaTime * 1000f);
-
+            Axe.isTrigger = true;
         }
         else
         {
             Anim.SetBool("AttackMelee2", false);
             noClick = 0;
+            Axe.isTrigger = false;
         }
     }
 
@@ -289,9 +286,9 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("AttackMelee", false);
         Anim.SetBool("AttackMelee2", false);
         Anim.SetBool("AttackMelee3", false);
+        Axe.isTrigger = false;
         noClick = 0;
     }
-
 
     private void OnTriggerEnter(Collider other)
     {

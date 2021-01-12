@@ -177,6 +177,17 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Axe")
+        {
+            enemyHealth -= /*playerDamage*/ 50;
+            EnemyHit();
+        }
+
+    }
+
+
 
     void EnemyDeath()
     {

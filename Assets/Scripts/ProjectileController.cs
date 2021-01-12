@@ -60,12 +60,10 @@ public class ProjectileController : MonoBehaviour
         if(weaponController.autoAimTrue == false)
         {
             _rigidbody.AddForceAtPosition((crosshair.transform.forward + up) * speed, crosshair.transform.position, ForceMode.Impulse);
-            Debug.Log("cross");
         }
         else if(weaponController.autoAimTrue == true)
         {
             _rigidbody.AddForce(aimLock.transform.position - transform.position, ForceMode.Impulse);
-            Debug.Log("target");
         }
     }
 
