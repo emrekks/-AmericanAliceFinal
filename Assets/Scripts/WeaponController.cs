@@ -16,13 +16,24 @@ public class WeaponController : MonoBehaviour
     private float delay = 0f;
 
     public CinemachineFreeLook cam;
+    public CinemachineFreeLook AimLockCam;
     private float maxFOV = 60;
     private float minFOV = 45;
     public bool isAim = false;
 
     public Animator anim;
 
+    public MeshRenderer aimLockSprite1;
+    public MeshRenderer aimLockSprite2;
+    public MeshRenderer aimLockSprite3;
 
+    public AutoAim _Autoaim;
+    public PlayerController player;
+    public GameObject aimLockAnim;
+    public GameObject Alice;
+    public GameObject crossHair;
+
+    public bool autoAimTrue = false;
 
     void Start()
     {
@@ -40,7 +51,7 @@ public class WeaponController : MonoBehaviour
     void Update()
     {
         anim.SetBool("isAim", isAim);
-        
+
         ////Attack
         //if (delay > 0)
         //{
@@ -51,12 +62,30 @@ public class WeaponController : MonoBehaviour
         //    delay = shootDelay;
         //    ShootBall();
         //}
+        if(player.isHandlingWand && _Autoaim.closestEnemy != null)
+        {
+            aimLockSprite1.enabled = true;
+            aimLockSprite2.enabled = true;
+            aimLockSprite3.enabled = true;
+            crossHair.SetActive(false);
+            autoAimTrue = true;
+            aimLockAnim.transform.position = new Vector3(_Autoaim.closestEnemy.transform.position.x, _Autoaim.closestEnemy.transform.position.y + 1.5f, _Autoaim.closestEnemy.transform.position.z);
+        }
+        else
+        {
+            aimLockSprite1.enabled = false;
+            aimLockSprite2.enabled = false;
+            aimLockSprite3.enabled = false;
+            crossHair.SetActive(true);
+            autoAimTrue = false;
+        }
+
+
 
         if (Input.GetMouseButton(1))
         {
             isAim = true;
             cam.m_Lens.FieldOfView = Mathf.Lerp(cam.m_Lens.FieldOfView, minFOV, 0.1f);
-
 
             // cam.m_Lens.FieldOfView = 45f;
 
@@ -69,18 +98,19 @@ public class WeaponController : MonoBehaviour
         {
             isAim = false;
             cam.m_Lens.FieldOfView = Mathf.Lerp(cam.m_Lens.FieldOfView, maxFOV, 0.1f);
-            
-            
+
+
+
             // cam.m_Lens.FieldOfView = 60f;
-            
+
             // for (int i = 45; i > 60; i++)
             // {
             //     camFOVTimer += Time.deltaTime;
             // }
         }
+
         
-        
-        
+
     }
 
     

@@ -99,7 +99,7 @@ public class EnemyController : MonoBehaviour
             }
             
             Anim.SetBool("attack",isAttack);
-            Anim.SetBool("block",isBlock);
+            //Anim.SetBool("block",isBlock);
         }
         
         //Enemy Run Away

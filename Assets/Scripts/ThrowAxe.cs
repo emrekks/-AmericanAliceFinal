@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ThrowAxe : MonoBehaviour
 {
     public Rigidbody axeRb;
@@ -76,6 +77,7 @@ public class ThrowAxe : MonoBehaviour
         axeRb.velocity = Vector3.zero;
         axeRb.isKinematic = true;
         hitedWall = false;
+        weapon.localEulerAngles = new Vector3(90, 90, 0);
     }
 
     //Reset Axe
@@ -86,6 +88,7 @@ public class ThrowAxe : MonoBehaviour
         axeRb.transform.parent = Hand.transform;
         weapon.localEulerAngles = origLocRot;
         weapon.localPosition = origLocPos;
+        
     }
     Vector3 Backtohandwcurve(float t, Vector3 p0, Vector3 p1, Vector3 p2)
     {

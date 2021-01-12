@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     //Axe
     public bool isHandlingAxe = false;
     public GameObject axeObject;
+    private float lastClickedTime;
+    private int noClick;
+    private float maxComboDelay = 1.5f;
+    private Vector3 Attackmove;
 
     //Player Bigger/Smaller Form
     public bool isSmall = false;
@@ -30,7 +34,8 @@ public class PlayerController : MonoBehaviour
     //Movement
     public float playerSpeed = 2.0f;
     private float jumpHeight = 6f;
-    private bool crouch = false; 
+    private bool crouch = false;
+    private Vector3 moveDir;
 
     //MovementMakeSmooth
     private float turnSmoothtime = 0.1f;
@@ -62,8 +67,12 @@ public class PlayerController : MonoBehaviour
     //Animator Condition
     private bool ForwardRight = false;
     private bool ForwardLeft = false;
-    private int randomAnim = 0;
 
+
+
+    //SwitchWeapon
+    private bool switchingWeapon;
+    private bool isChangingHandToAxe, isChangingHandToStaff;
     private void Start()
     {
         _weaponController = GameObject.FindObjectOfType<WeaponController>();
@@ -101,12 +110,10 @@ public class PlayerController : MonoBehaviour
         //When character movement this code take reference
         if (direction.magnitude >= 0.1f)
         {
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
         }
 
-
-        
 
         //Animation Conditions
         if (horizontal < -0.01f && vertical > 0.01f)
@@ -127,7 +134,7 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("crouch1", crouch);
         Anim.SetBool("ForwardRunningRight", ForwardRight);
         Anim.SetBool("ForwardRunningLeft", ForwardLeft);
-        Anim.SetInteger("RandomAttack", randomAnim);
+
 
         //Crouch
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -145,24 +152,28 @@ public class PlayerController : MonoBehaviour
         }
 
         //Weapon Selection
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !axeObject.activeInHierarchy)
         {
-            axeObject.SetActive(true);
-            staff.SetActive(false);
+            isChangingHandToAxe = true;
+            isChangingHandToStaff = false;
+            switchingWeapon = true;
+            Anim.SetTrigger("UnarmedToWeapon");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !staff.activeInHierarchy)
         {
-            axeObject.SetActive(false);
-            staff.SetActive(true);
+            isChangingHandToStaff = true;
+            isChangingHandToAxe = false;
+            switchingWeapon = true;
+            Anim.SetTrigger("UnarmedToWeapon");
         }
         
 
         //Magic
-        if (staff.activeInHierarchy)
+        if (staff.activeInHierarchy && switchingWeapon == false)
         {
             isHandlingWand = true;
         }
-        else
+        else 
         {
             isHandlingWand = false;
         }
@@ -185,24 +196,32 @@ public class PlayerController : MonoBehaviour
 
 
         //Throwing Axe
-        if (axeObject.activeInHierarchy)
+        if (axeObject.activeInHierarchy && switchingWeapon == false)
         {
             isHandlingAxe = true;
         }
-        else
+        else 
         {
             isHandlingAxe = false;
         }
 
-        if (Input.GetMouseButtonDown(0) && isHandlingAxe == true && !Input.GetMouseButton(1))
+
+        //MeleeAttack
+
+        if (Time.time - lastClickedTime > maxComboDelay)
         {
-            randomAnim = Random.Range(1,3);
-            Anim.SetBool("AttackMelee", true);
+            noClick = 0;
         }
 
-        if (Input.GetMouseButtonUp(0) && isHandlingAxe == true && !Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(0) && isHandlingAxe == true && !Input.GetMouseButton(1))
         {
-            Anim.SetBool("AttackMelee", false);
+            lastClickedTime = Time.time;
+            noClick++;
+            if(noClick == 1)
+            {
+                Anim.SetBool("AttackMelee", true);
+            }
+            noClick = Mathf.Clamp(noClick, 0, 3);
         }
 
 
@@ -212,7 +231,7 @@ public class PlayerController : MonoBehaviour
             Physics.IgnoreCollision(Character, Axe, true);
         }
 
-        if (Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == true && isHandlingAxe==true)
+        if (Input.GetMouseButton(1) && Input.GetMouseButtonUp(0) && _throwAxe.hitedWall == true && isHandlingAxe == true)
         {
             _throwAxe.WeaponStartPull();
 
@@ -221,8 +240,6 @@ public class PlayerController : MonoBehaviour
 
         //Grounded Check
         grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
-        
-
 
         //Jump and Gravity
         if (Input.GetKey(KeyCode.Space) && grounded)
@@ -236,6 +253,44 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(playerGravity * Time.deltaTime);
+    }
+
+
+    public void Combo1()
+    {
+        if(noClick >= 2)
+        {
+            
+            Anim.SetBool("AttackMelee2", true);
+        }
+        else
+        {
+            Anim.SetBool("AttackMelee", false);
+            noClick = 0;
+        }
+    }
+
+    public void Combo2()
+    {
+        if (noClick >= 3)
+        {
+            Anim.SetBool("AttackMelee3", true);
+            controller.Move(moveDirection * Time.deltaTime * dashSpeed);
+
+        }
+        else
+        {
+            Anim.SetBool("AttackMelee2", false);
+            noClick = 0;
+        }
+    }
+
+    public void Combo3()
+    {
+        Anim.SetBool("AttackMelee", false);
+        Anim.SetBool("AttackMelee2", false);
+        Anim.SetBool("AttackMelee3", false);
+        noClick = 0;
     }
 
 
@@ -268,14 +323,29 @@ public class PlayerController : MonoBehaviour
         _throwAxe.ThrowableAxe();
     }
 
+    private void unarmedToAxe()
+    {
+        if(isChangingHandToAxe == true)
+        {
+            staff.SetActive(false);
+            axeObject.SetActive(true);
+            staff.SetActive(false);
+            switchingWeapon = false;
+        }
+
+        if (isChangingHandToStaff == true)
+        {
+            axeObject.SetActive(false);
+            staff.SetActive(true);
+            axeObject.SetActive(false);
+            switchingWeapon = false;
+        }
+
+    }
+
     private void magic()
     {
         _weaponController.ShootBall();
-    }
-
-    private void resetRandom()
-    {
-        randomAnim = 0;
     }
 
     private void AttackMeleeFalse()

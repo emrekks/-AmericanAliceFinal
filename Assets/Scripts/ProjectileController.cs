@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    private WeaponController _weaponController;
+    private WeaponController weaponController;
     public float speed = 50f;
     [SerializeField] private Rigidbody _rigidbody;
     public GameObject staffPrefab;
     private GameObject crosshair;
-    private Transform crossPos;
+    private GameObject aimLock;
     // public GameObject magicBallSpawnPoint;
     private Vector3 up;
 
@@ -22,6 +22,9 @@ public class ProjectileController : MonoBehaviour
 
     void Awake()
     {
+        gameObject.SetActive(false);
+        weaponController = GameObject.FindObjectOfType<WeaponController>();
+        aimLock = GameObject.FindGameObjectWithTag("AimLockedTarget");
         crosshair = GameObject.FindGameObjectWithTag("Crosshair");
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -30,7 +33,7 @@ public class ProjectileController : MonoBehaviour
     public void Start()
     {
         _target = PlayerManager.instance.player.transform;
-        up = new Vector3(0,0.1f,0);
+        up = new Vector3(0, 0.1f, 0);
     }
 
     void Update()
@@ -49,7 +52,21 @@ public class ProjectileController : MonoBehaviour
     void OnEnable()
     {
         _rigidbody.isKinematic = false;
-        _rigidbody.AddForceAtPosition((crosshair.transform.forward + up) * speed,crosshair.transform.position, ForceMode.Impulse);
+        shootBall();
+    }
+
+    void shootBall()
+    {
+        if(weaponController.autoAimTrue == false)
+        {
+            _rigidbody.AddForceAtPosition((crosshair.transform.forward + up) * speed, crosshair.transform.position, ForceMode.Impulse);
+            Debug.Log("cross");
+        }
+        else if(weaponController.autoAimTrue == true)
+        {
+            _rigidbody.AddForce(aimLock.transform.position - transform.position, ForceMode.Impulse);
+            Debug.Log("target");
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -64,7 +81,7 @@ public class ProjectileController : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(player.transform.position,attackRange);
+        Gizmos.DrawWireSphere(player.transform.position, attackRange);
     }
-    
+
 }

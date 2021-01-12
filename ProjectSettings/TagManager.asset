@@ -9,6 +9,7 @@ TagManager:
   - Crosshair
   - ProjectileSpawnPoint
   - Enemy
+  - AimLockedTarget
   layers:
   - Default
   - TransparentFX

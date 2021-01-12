@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AxeController : MonoBehaviour
 {
+    public GameObject alice;
     public bool activated;
     private ThrowAxe _throwAxe;
     public float rotationSpeed = -1400;
@@ -25,12 +26,13 @@ public class AxeController : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        GetComponent<Rigidbody>().Sleep();
-        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        //GetComponent<Rigidbody>().Sleep();
+        //GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
         GetComponent<Rigidbody>().isKinematic = true;
         activated = false;
         _throwAxe.hitedWall = true;
-        _throwAxe.weapon.localEulerAngles = new Vector3(-180, 270, -130);
+        //_throwAxe.weapon.localEulerAngles = new Vector3(-180, 270, -130);
+        _throwAxe.weapon.localEulerAngles = new Vector3(alice.transform.localEulerAngles.x, alice.transform.localEulerAngles.y + 100, 60);
     }
 
 }
