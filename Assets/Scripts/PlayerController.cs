@@ -8,6 +8,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     
+    //Ice Staff
+    public GameObject iceStaff;
+    private bool isHandlingStaff;
+    private bool isAttackingIceStaff;
+    public ParticleSystem iceParticles;
+    
     //Weapon Controller
     private WeaponController _weaponController;
     private ThrowAxe _throwAxe;
@@ -160,6 +166,7 @@ public class PlayerController : MonoBehaviour
         //Weapon Selection
         if (Input.GetKeyDown(KeyCode.Alpha1) && !axeObject.activeInHierarchy)
         {
+            iceStaff.SetActive(false);
             isChangingHandToAxe = true;
             isChangingHandToStaff = false;
             switchingWeapon = true;
@@ -167,10 +174,22 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && !staff.activeInHierarchy)
         {
+            iceStaff.SetActive(false);
             isChangingHandToStaff = true;
             isChangingHandToAxe = false;
             switchingWeapon = true;
             Anim.SetTrigger("UnarmedToWeapon");
+        }
+        if (Input.GetKeyDown((KeyCode.Alpha3)) && !iceStaff.activeInHierarchy)
+        {
+            // isChangingHandToAxe = false;
+            // isChangingHandToStaff = false;
+            // switchingWeapon = true;
+            // Anim.SetTrigger("UnarmedToWeapon");
+            
+            axeObject.SetActive(false);
+            staff.SetActive(false);
+            iceStaff.SetActive(true);
         }
 
 
@@ -180,8 +199,34 @@ public class PlayerController : MonoBehaviour
             playerDead = true;
             playerDeath();
         }
+        
+        //IceStaff
+        if (iceStaff.activeInHierarchy && switchingWeapon == false)
+        {
+            isHandlingStaff = true;
+        }
+        else
+        {
+            isHandlingStaff = false;
+        }
 
-        //Magic
+        if (isAttackingIceStaff == false && switchingWeapon == false)    //Bug Olabilir Staff Yüzünden
+        {
+            if (Input.GetMouseButton(0))
+            {
+                isAttackingIceStaff = true;
+                //IceStaffAnimationBurayaGelicek
+                iceParticles.Play();
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                iceParticles.Stop();
+            }
+
+            isAttackingIceStaff = false;
+        } 
+
+        //MagicStaff
         if (staff.activeInHierarchy && switchingWeapon == false)
         {
             isHandlingWand = true;
