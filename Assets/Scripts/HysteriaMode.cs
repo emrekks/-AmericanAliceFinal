@@ -35,6 +35,9 @@ public class HysteriaMode : MonoBehaviour
     public ParticleSystem particleRing;
     public float particleRingRadius;
     public bool particleRingOpen;
+    public GameObject ringObject;
+    private float Timer = 0f;
+    private bool isclickedH = false;
     
     void Start()
     {
@@ -43,13 +46,18 @@ public class HysteriaMode : MonoBehaviour
     
     void Update()
     {
+        if (isclickedH == true)
+        {
+            RingMove();
+        }
+        
         
         if (Input.GetKeyDown(KeyCode.H))
         {
             RenderSettings.fogDensity = 0.06f;
             hysteriaOpen = true;
             particleBlood.Play();
-            particleRing.Play();
+            isclickedH = true;
             particleRingOpen = true;
             player.material = playerHisMat;
             enemy.material = enemyHisMat;
@@ -70,6 +78,7 @@ public class HysteriaMode : MonoBehaviour
                 enemy.material = enemyMat;
                 environment.material = environmentMat;
                 RenderSettings.fogDensity = 0f;
+                isclickedH = false;
             }
         }
 
@@ -79,5 +88,17 @@ public class HysteriaMode : MonoBehaviour
             particleRingRadius += particleRing.shape.radius;
         }
 
+    }
+
+    void RingMove()
+    {
+        particleRing.Play();
+        Timer += Time.deltaTime;
+        if (Timer >= 0.05f)
+        {
+            ringObject.transform.localScale += new Vector3(0.05f, 0.05f, 0.05f);
+            Timer = 0f;
+        }
+        
     }
 }
