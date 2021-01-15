@@ -9,13 +9,20 @@ public class PlayerController : MonoBehaviour
     //Weapon Controller
     private WeaponController _weaponController;
     private ThrowAxe _throwAxe;
-    
+    private PlayerController _playerController;
+
+    //Health
+    public int playerHealth = 100;
+    private bool playerDead = false;
+
     //Axe
     public bool isHandlingAxe = false;
     public GameObject axeObject;
     private float lastClickedTime;
     private int noClick;
     private float maxComboDelay = 1.5f;
+    public bool AttackingColliderEnable = false;
+
 
 
     //Player Bigger/Smaller Form
@@ -73,6 +80,7 @@ public class PlayerController : MonoBehaviour
     {
         _weaponController = GameObject.FindObjectOfType<WeaponController>();
         _throwAxe = GameObject.FindObjectOfType<ThrowAxe>();
+        _playerController = GetComponent<PlayerController>();
         Anim = gameObject.GetComponent<Animator>();
         playerScale = gameObject.transform.localScale;
         Cursor.visible = false;
@@ -162,7 +170,14 @@ public class PlayerController : MonoBehaviour
             switchingWeapon = true;
             Anim.SetTrigger("UnarmedToWeapon");
         }
-        
+
+
+        //Health
+        if (playerHealth <= 0)
+        {
+            playerDead = true;
+            playerDeath();
+        }
 
         //Magic
         if (staff.activeInHierarchy && switchingWeapon == false)
@@ -276,6 +291,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Anim.SetBool("AttackMelee2", false);
+            Anim.SetBool("AttackMelee", false);
             noClick = 0;
             Axe.isTrigger = false;
         }
@@ -298,6 +314,19 @@ public class PlayerController : MonoBehaviour
             DevilForm();
             other.gameObject.SetActive(false);
         }
+
+        if (other.gameObject.tag == "EnemySword")
+        {
+            playerHealth -= 25;
+        }
+    }
+
+    void playerDeath()
+    {
+        Anim.SetBool("Death", playerDead);
+        _weaponController.enabled = false;
+        _throwAxe.enabled = false;
+        _playerController.enabled = false;
     }
 
     void ChangeScale()
@@ -337,6 +366,16 @@ public class PlayerController : MonoBehaviour
             switchingWeapon = false;
         }
 
+    }
+
+    public void AxeColliderEnableTrue()
+    {
+        AttackingColliderEnable = true;
+    }
+
+    public void AxeColliderEnableFalse()
+    {
+        AttackingColliderEnable = false;
     }
 
     private void magic()

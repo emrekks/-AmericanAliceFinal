@@ -54,11 +54,14 @@ public class EnemyController : MonoBehaviour
     private Transform _target;
     public NavMeshAgent _agent;
 
+    private CapsuleCollider thisEnemyCollider;
+
     void Start()
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
         enemyController = GetComponent<EnemyController>();
+        thisEnemyCollider = GetComponent<CapsuleCollider>();
     }
 
     void Update()
@@ -138,9 +141,6 @@ public class EnemyController : MonoBehaviour
 
     
     
-    
-    
-    
     //Enemy Block
     void EnemyBlock()
     {
@@ -195,6 +195,8 @@ public class EnemyController : MonoBehaviour
         Anim.SetBool("death",isDead);
         // Anim.SetTrigger("death");
         enemyController.enabled = false;
+        _agent.enabled = false;
+        //thisEnemyCollider.enabled = false;
     }
 
 

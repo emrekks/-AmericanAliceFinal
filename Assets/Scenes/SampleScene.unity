@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: swordFinal
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 53656512e7d03754ca2704c95bbf694a,
+        type: 3}
+      propertyPath: m_TagString
+      value: EnemySword
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53656512e7d03754ca2704c95bbf694a, type: 3}
 --- !u!1 &60181234 stripped
@@ -292,6 +297,8 @@ MonoBehaviour:
   alice: {fileID: 1214942653}
   activated: 0
   rotationSpeed: -1400
+  isAxeHand: 0
+  AxeCollider: {fileID: 110959405}
 --- !u!1 &132482036
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sword And Shield Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e68132d2441021042a9945cf49d73872,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68132d2441021042a9945cf49d73872, type: 3}
@@ -2837,8 +2849,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929768158}
-  m_LocalRotation: {x: -0.09724156, y: -0.000000017124838, z: -0.0000000016731752,
-    w: 0.99526083}
+  m_LocalRotation: {x: -0.09724155, y: 0.000000017124837, z: 0.0000000016731748, w: 0.99526083}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2860,6 +2871,7 @@ GameObject:
   - component: {fileID: 963194229}
   - component: {fileID: 963194233}
   - component: {fileID: 963194232}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2925,7 +2937,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.06869638, y: 0.000000008582867, z: 5.91008e-10, w: 0.9976376}
+  m_LocalRotation: {x: -0.06869638, y: -0.000000008582868, z: -5.910081e-10, w: 0.9976376}
   m_LocalPosition: {x: -25.58, y: -2.1, z: -6.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2967,6 +2979,18 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f744dd5a07c2e4c8e34051e68a6c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &963194232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3323,8 +3347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf1390844e7d7b47a427dbce05fc834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 100
   isHandlingAxe: 1
   axeObject: {fileID: 110959402}
+  AttackingColliderEnable: 0
   isSmall: 0
   devilOpen: 0
   devilFormTimer: 0
@@ -3436,8 +3462,9 @@ MonoBehaviour:
   origLocPos: {x: 0, y: 0, z: 0}
   origLocRot: {x: 0, y: 0, z: 0}
   weapon: {fileID: 110959403}
-  _axeController: {fileID: 0}
+  _axeController: {fileID: 110959406}
   hitedWall: 0
+  AxeControllerIsHand: 1
 --- !u!135 &1252487855 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 2835915668785823689, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
@@ -3576,7 +3603,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377049722}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.044568095, y: 0.26021722, z: 0.013603922}
@@ -3898,7 +3925,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658518074}
-  m_LocalRotation: {x: -0.068696365, y: 0.000000004291433, z: 2.9550393e-10, w: 0.9976376}
+  m_LocalRotation: {x: -0.068696365, y: -0.000000004291434, z: -2.9550398e-10, w: 0.9976376}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

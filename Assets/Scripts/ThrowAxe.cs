@@ -7,7 +7,6 @@ public class ThrowAxe : MonoBehaviour
 {
     public Rigidbody axeRb;
 
-
     public float throwForce = 50;
 
 
@@ -28,7 +27,7 @@ public class ThrowAxe : MonoBehaviour
     
     public bool hitedWall = false;
     private bool isReturning = false;
-
+    public bool AxeControllerIsHand = true;
 
 
     // Start is called before the first frame update
@@ -62,6 +61,7 @@ public class ThrowAxe : MonoBehaviour
 
     public void ThrowableAxe()
     {
+        AxeControllerIsHand = false;
         _axeController.activated = true;
         axeRb.transform.parent = null;
         axeRb.isKinematic = false;
@@ -88,7 +88,8 @@ public class ThrowAxe : MonoBehaviour
         axeRb.transform.parent = Hand.transform;
         weapon.localEulerAngles = origLocRot;
         weapon.localPosition = origLocPos;
-        
+        AxeControllerIsHand = true;
+
     }
     Vector3 Backtohandwcurve(float t, Vector3 p0, Vector3 p1, Vector3 p2)
     {

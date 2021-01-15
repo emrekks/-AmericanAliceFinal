@@ -8,18 +8,36 @@ public class AxeController : MonoBehaviour
     public bool activated;
     private ThrowAxe _throwAxe;
     public float rotationSpeed = -1400;
+    public bool isAxeHand;
+    public BoxCollider AxeCollider;
+    private PlayerController _playerController;
 
     private void Start()
     {
+        _playerController = GameObject.FindObjectOfType<PlayerController>();
         _throwAxe = GameObject.FindObjectOfType<ThrowAxe>();
     }
     void Update()
     {
+        isAxeHand = _throwAxe.AxeControllerIsHand;
+       
+        if (isAxeHand && _playerController.AttackingColliderEnable)
+        {
+            AxeCollider.enabled = true;
+        }
+
+        if (isAxeHand && !_playerController.AttackingColliderEnable)
+        {
+            AxeCollider.enabled = false;
+        }
+        else
+        {
+            AxeCollider.enabled = true;
+        }
 
         if (activated)
         {
             transform.localEulerAngles += Vector3.forward * rotationSpeed * Time.deltaTime;
-
         }
 
     }

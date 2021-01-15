@@ -11,6 +11,8 @@ TagManager:
   - Enemy
   - AimLockedTarget
   - Axe
+  - EnemySword
+  - HiddenObject
   layers:
   - Default
   - TransparentFX
