@@ -46,7 +46,8 @@ public class EnemyController : MonoBehaviour
     private float moveY = 10;
 
     //Enemy Trigger Radius
-    public float lookRadius = 10f;
+    public float lookRadius = 50f;
+    public float chaseRadius = 15f;
     
     //Enemy Attack Radius
     public float attackRadius = 1f;
@@ -69,6 +70,11 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(_target.position, transform.position);
         
         //float attackDistance = Vector3.Distance(_target.position, transform.position);
+
+        if (distance <= chaseRadius)
+        {
+            FaceTarget();
+        }
 
         //Enemy Chase
         if (player.GetComponent<PlayerController>().devilOpen == false)
@@ -205,6 +211,9 @@ public class EnemyController : MonoBehaviour
     //Enemy Distance Gizmos
     void OnDrawGizmosSelected()
     {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position,chaseRadius);
+        
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position,lookRadius);
         
