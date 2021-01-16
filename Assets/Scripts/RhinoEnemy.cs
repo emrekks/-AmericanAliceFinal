@@ -77,34 +77,45 @@ public class RhinoEnemy : MonoBehaviour
         else
         {
             lookRadius = 15f;
+            _agent.speed = 2f;
+            isCharging = false;
+            isSmashing = false;
         }
         
         //RhinoCharge
         if (distance <= chargeAttackRadius)
         {
             chargeTimer += Time.deltaTime;
-            //ChargeLoadAnim
-            Debug.Log("isCharging");
-            isCharging = true;
-            _agent.speed = 0f;
-
+            
+            if (isCharging == false)
+            {
+                isCharging = true;
+                _agent.speed = 0f;
+                //ChargeLoadAnim
+                Debug.Log("isCharging");
+            }
+            
             if (chargeTimer >= 2f)
             {
                 chargeStartedTimer += Time.deltaTime;
-                //ChargeAnim
-                Debug.Log("Charged");
-                chargeTimer = 0f;
-                isCharging = false;
-                _agent.SetDestination(_target.position);
-                _agent.speed = 8f;
 
+                if (isCharging == true)
+                {
+                    _agent.speed = 8f;
+                    //ChargeAnim
+                    Debug.Log("Charged");
+                    chargeTimer = 0f;
+                }
+                
                 if (chargeStartedTimer >= 3f)
                 {
                     _agent.speed = 2f;
+                    isCharging = false;
+                    chargeStartedTimer = 0f;
                 }
             }
         }
-        
+
         //RhinoSmash
         if (distance <= smashAttackRadius)
         {
