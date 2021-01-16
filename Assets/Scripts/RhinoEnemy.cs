@@ -132,6 +132,10 @@ public class RhinoEnemy : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            isCharging = false;
+        }
 
         //RhinoSmash
         if (distance <= smashAttackRadius)
