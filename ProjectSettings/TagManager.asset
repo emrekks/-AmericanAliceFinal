@@ -13,6 +13,10 @@ TagManager:
   - Axe
   - EnemySword
   - HiddenObject
+  - GlideCheck
+  - Floor
+  - GetDamageLeft
+  - GetDamageRight
   layers:
   - Default
   - TransparentFX

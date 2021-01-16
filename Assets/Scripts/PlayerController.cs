@@ -5,6 +5,7 @@ using System.Net;
 using UnityEngine;
 
 
+
 public class PlayerController : MonoBehaviour
 {
     
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private WeaponController _weaponController;
     private ThrowAxe _throwAxe;
     private PlayerController _playerController;
+    private GlideScript _glideScript;
 
     //Health
     public int playerHealth = 100;
@@ -31,7 +33,11 @@ public class PlayerController : MonoBehaviour
     private float maxComboDelay = 1.5f;
     public bool AttackingColliderEnable = false;
 
+    //Hurt
+    private int Hurt;
 
+    //Glide
+    private bool Gliding;
 
     //Player Bigger/Smaller Form
     public bool isSmall = false;
@@ -47,11 +53,11 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
 
     //Movement
-    public float playerSpeed = 2.0f;
+    public float playerSpeed = 3.0f;
     private float jumpHeight = 6f;
     private bool crouch = false;
     private Vector3 moveDir;
-
+    private int jumpCount = 1;
 
     //Gravity
     private float gravityValue = -15.0f;
@@ -89,6 +95,7 @@ public class PlayerController : MonoBehaviour
         _weaponController = GameObject.FindObjectOfType<WeaponController>();
         _throwAxe = GameObject.FindObjectOfType<ThrowAxe>();
         _playerController = GetComponent<PlayerController>();
+        _glideScript = GameObject.FindObjectOfType<GlideScript>();
         Anim = gameObject.GetComponent<Animator>();
         playerScale = gameObject.transform.localScale;
         Cursor.visible = false;
@@ -146,6 +153,7 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("crouch1", crouch);
         Anim.SetBool("ForwardRunningRight", ForwardRight);
         Anim.SetBool("ForwardRunningLeft", ForwardLeft);
+        Anim.SetBool("Gliding", Gliding);
 
 
         //Crouch
@@ -191,6 +199,19 @@ public class PlayerController : MonoBehaviour
             staff.SetActive(false);
             iceStaff.SetActive(true);
         }
+
+        //Glide
+        if (Input.GetKey(KeyCode.LeftShift) && _glideScript.GlideBool == false)
+        {
+            playerGravity.y = -2;
+            Gliding = true;
+        }
+       
+        if (Input.GetKeyUp(KeyCode.LeftShift) && _glideScript.GlideBool == false || _glideScript.GlideBool == true)
+        {
+            Gliding = false;
+        }
+
 
 
         //Health
@@ -299,19 +320,27 @@ public class PlayerController : MonoBehaviour
         grounded = Physics.CheckSphere(Groundcheck.position, groundRadius, whatIsGround);
 
         //Jump and Gravity
-        if (Input.GetKey(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0)
         {
             Anim.SetTrigger("jumping");
             playerGravity.y = jumpHeight;
+            jumpCount--;
         }
-        else
+
+        if (grounded)
+        {
+            jumpCount = 1;
+        }
+
+        else if(Gliding == false)
         {
             playerGravity.y += gravityValue * Time.deltaTime;
         }
 
         controller.Move(playerGravity * Time.deltaTime);
-    }
 
+
+    }
 
     public void Combo1()
     {
@@ -364,7 +393,11 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "EnemySword")
         {
+            Hurt = UnityEngine.Random.Range(1,3);
+            Anim.SetTrigger("Hurt");           
             playerHealth -= 25;
+            Anim.SetInteger("DirectionHurt", Hurt);
+            
         }
     }
 

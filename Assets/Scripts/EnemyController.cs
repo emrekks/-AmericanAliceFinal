@@ -99,11 +99,16 @@ public class EnemyController : MonoBehaviour
             if (distance <= attackRadius)
             {
                 isAttack = true;
-                _agent.speed = 0;
+                _agent.speed = 1
+                    
+                    
+                    
+                    
+                    ;
             }
             else
             {
-                _agent.speed = 2;
+                _agent.speed = 3;
                 isAttack = false;
             }
             
