@@ -220,7 +220,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -127.1, y: 5, z: 5.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 636046589}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28351,8 +28352,8 @@ GameObject:
   - component: {fileID: 2109428705}
   - component: {fileID: 2109428704}
   m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: Rhino
+  m_TagString: Rhino
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28372,6 +28373,7 @@ MonoBehaviour:
   rhinoHealth: 0
   rhinoArmor: 0
   rhinoDamage: 0
+  rhino: {fileID: 0}
   lookRadius: 15
   playerSeen: 0
   smashAttackRadius: 3

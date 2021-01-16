@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +25,10 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
@@ -45,7 +50,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -91,7 +96,9 @@
       <workItem from="1610809186072" duration="608000" />
       <workItem from="1610812205464" duration="92000" />
       <workItem from="1610812313427" duration="1698000" />
-      <workItem from="1610823118094" duration="491000" />
+      <workItem from="1610823118094" duration="1264000" />
+      <workItem from="1610826279340" duration="50000" />
+      <workItem from="1610826349863" duration="3054000" />
     </task>
     <servers />
   </component>

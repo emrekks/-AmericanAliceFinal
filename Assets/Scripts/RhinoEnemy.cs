@@ -20,6 +20,8 @@ public class RhinoEnemy : MonoBehaviour
     #endregion
 
 
+    public GameObject rhino;
+    
     public float lookRadius = 15f;
 
     private Transform _target;
@@ -42,7 +44,9 @@ public class RhinoEnemy : MonoBehaviour
     public float chargeAttackRadius = 13f;
     private float chargeTimer = 0f;
     private float chargeStartedTimer = 0f;
-    [SerializeField]private bool isCharging = false;
+    public bool isCharging = false;
+    private float tiredTimer = 0f;
+    [SerializeField]private bool isTired = false;
     
 
     #endregion
@@ -51,6 +55,7 @@ public class RhinoEnemy : MonoBehaviour
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
+        rhino = this.gameObject;
         _agent.speed = 2f;
     }
 
@@ -88,45 +93,60 @@ public class RhinoEnemy : MonoBehaviour
         {
             chargeTimer += Time.deltaTime;
             
-            if (isCharging == false)
+            if (isCharging == false && isTired == false)
             {
-                isCharging = true;
                 _agent.speed = 0f;
                 //ChargeLoadAnim
                 Debug.Log("isCharging");
+                isCharging = true;
             }
             
             if (chargeTimer >= 2f)
             {
                 chargeStartedTimer += Time.deltaTime;
 
-                if (isCharging == true)
+                if (isCharging == true && isTired == false)  // Bu kısım sadece animasyon bitene kadar çalışıp geçmeli
                 {
                     _agent.speed = 8f;
                     //ChargeAnim
                     Debug.Log("Charged");
-                    chargeTimer = 0f;
                 }
                 
-                if (chargeStartedTimer >= 3f)
+                if (chargeStartedTimer >= 2f)
                 {
-                    _agent.speed = 2f;
+                    _agent.speed = 0f;
+                    tiredTimer += Time.deltaTime;
+                    isTired = true;
                     isCharging = false;
+                    
+                }
+                
+                if (tiredTimer >= 2f && isTired == true)
+                {
+                    Debug.Log("Tired");
+                    chargeTimer = 0f;
                     chargeStartedTimer = 0f;
+                    tiredTimer = 0f;
+                    isTired = false;
+
                 }
             }
         }
 
         //RhinoSmash
-        if (distance <= smashAttackRadius && isCharging == false)
+        if (distance <= smashAttackRadius)
         {
             smashHitTimer += Time.deltaTime;
-            //SmashLoadAnim
-            Debug.Log("isSmashing");
-            isSmashing = true;
-            _agent.speed = 0f;
 
-            if (smashHitTimer >= 3f)
+            if (isCharging == false && isTired == false && isSmashing == false)
+            {
+                //SmashLoadAnim
+                Debug.Log("isSmashing");
+                isSmashing = true;
+                _agent.speed = 0f;
+            }
+            
+            if (smashHitTimer >= 1f && isSmashing == true)
             {
                 //SmashAnim
                 Debug.Log("Smashed");

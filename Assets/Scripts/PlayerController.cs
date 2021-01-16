@@ -9,6 +9,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     
+    //Rhino Attack
+    private RhinoEnemy _rhinoEnemy;
+    private Rigidbody _rigidbody;
+    
     //Ice Staff
     public GameObject iceStaff;
     private bool isHandlingStaff;
@@ -92,10 +96,12 @@ public class PlayerController : MonoBehaviour
     private bool isChangingHandToAxe, isChangingHandToStaff;
     private void Start()
     {
+        _rigidbody = GetComponent<Rigidbody>();
         _weaponController = GameObject.FindObjectOfType<WeaponController>();
         _throwAxe = GameObject.FindObjectOfType<ThrowAxe>();
         _playerController = GetComponent<PlayerController>();
         _glideScript = GameObject.FindObjectOfType<GlideScript>();
+        _rhinoEnemy = GameObject.FindWithTag("Rhino").GetComponent<RhinoEnemy>();
         Anim = gameObject.GetComponent<Animator>();
         playerScale = gameObject.transform.localScale;
         Cursor.visible = false;
@@ -398,6 +404,16 @@ public class PlayerController : MonoBehaviour
             playerHealth -= 25;
             Anim.SetInteger("DirectionHurt", Hurt);
             
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Rhino") && _rhinoEnemy.isCharging == true)
+        {
+            Debug.Log("Hit");
+            _rigidbody.AddExplosionForce(1f,_rhinoEnemy.rhino.transform.position * -1,3f,1f,ForceMode.Impulse);
+            playerHealth -= 50;
         }
     }
 

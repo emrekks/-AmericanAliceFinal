@@ -17,6 +17,7 @@ TagManager:
   - Floor
   - GetDamageLeft
   - GetDamageRight
+  - Rhino
   layers:
   - Default
   - TransparentFX
