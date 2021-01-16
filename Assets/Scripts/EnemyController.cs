@@ -9,7 +9,13 @@ using Random = System.Random;
 
 public class EnemyController : MonoBehaviour
 {
-    
+    public static EnemyController Instance;
+    void Awake()
+    {
+        Instance = this;
+    }
+
+
     public GameObject player;
     public float enemyDistanceRun;
 
@@ -40,13 +46,12 @@ public class EnemyController : MonoBehaviour
 
     private EnemyController enemyController;
 
-
+    
     //Enemy Block Radius
     private bool isBlocking = false;
     private bool playerCanAttack = false;
     private float playerCanAttackRadius = 6f;
-    
-    
+
     //Enemy Move Radius
     private float moveTimer = 0f;
     private float moveX = -10;
@@ -105,15 +110,10 @@ public class EnemyController : MonoBehaviour
             }
             
             
-            if (distance <= attackRadius)
+            if (distance <= attackRadius || this.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
                 isAttack = true;
-                _agent.speed = 1
-                    
-                    
-                    
-                    
-                    ;
+                _agent.speed = 1f;               
             }
             else
             {

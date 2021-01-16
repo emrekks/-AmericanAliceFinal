@@ -51,6 +51,7 @@ public class RhinoEnemy : MonoBehaviour
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
+        _agent.speed = 2f;
     }
 
     
@@ -83,7 +84,7 @@ public class RhinoEnemy : MonoBehaviour
         }
         
         //RhinoCharge
-        if (distance <= chargeAttackRadius)
+        if (distance <= chargeAttackRadius && isSmashing == false)
         {
             chargeTimer += Time.deltaTime;
             
@@ -117,7 +118,7 @@ public class RhinoEnemy : MonoBehaviour
         }
 
         //RhinoSmash
-        if (distance <= smashAttackRadius)
+        if (distance <= smashAttackRadius && isCharging == false)
         {
             smashHitTimer += Time.deltaTime;
             //SmashLoadAnim
