@@ -9,6 +9,13 @@ using Random = System.Random;
 
 public class EnemyController : MonoBehaviour
 {
+    public static EnemyController Instance;
+    void Awake()
+    {
+        Instance = this;
+    }
+
+
     public GameObject player;
     public float enemyDistanceRun;
 
@@ -75,6 +82,8 @@ public class EnemyController : MonoBehaviour
         {
             FaceTarget();
         }
+        
+        
 
         //Enemy Chase
         if (player.GetComponent<PlayerController>().devilOpen == false)

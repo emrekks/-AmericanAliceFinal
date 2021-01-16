@@ -12,10 +12,12 @@
           <e p="AutoAim.cs" t="Include" />
           <e p="AxeController.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
+          <e p="GlideScript.cs" t="Include" />
           <e p="HysteriaMode.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="ProjectileController.cs" t="Include" />
+          <e p="RhinoEnemy.cs" t="Include" />
           <e p="SeeHiddenObject.cs" t="Include" />
           <e p="ThrowAxe.cs" t="Include" />
           <e p="WeaponController.cs" t="Include" />
