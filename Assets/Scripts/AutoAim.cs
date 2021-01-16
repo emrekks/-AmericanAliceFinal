@@ -11,8 +11,6 @@ public class AutoAim : MonoBehaviour
 
 
 
-
-
     // Update is called once per frame
     void Update()
     {
