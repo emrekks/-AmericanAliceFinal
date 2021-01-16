@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
     //Rhino Attack
     private RhinoEnemy _rhinoEnemy;
-    private Rigidbody _rigidbody;
+    public Rigidbody _rigidbody;
     
     //Ice Staff
     public GameObject iceStaff;
@@ -404,16 +404,6 @@ public class PlayerController : MonoBehaviour
             playerHealth -= 25;
             Anim.SetInteger("DirectionHurt", Hurt);
             
-        }
-    }
-
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("Rhino") && _rhinoEnemy.isCharging == true)
-        {
-            Debug.Log("Hit");
-            _rigidbody.AddExplosionForce(1f,_rhinoEnemy.rhino.transform.position * -1,3f,1f,ForceMode.Impulse);
-            playerHealth -= 50;
         }
     }
 

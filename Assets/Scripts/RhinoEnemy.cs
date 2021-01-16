@@ -21,8 +21,9 @@ public class RhinoEnemy : MonoBehaviour
 
 
     public GameObject rhino;
-    
+    public PlayerController _player;
     public float lookRadius = 15f;
+    public Animator anim;
 
     private Transform _target;
     private NavMeshAgent _agent;
@@ -98,7 +99,7 @@ public class RhinoEnemy : MonoBehaviour
                 _agent.speed = 0f;
                 //ChargeLoadAnim
                 Debug.Log("isCharging");
-                isCharging = true;
+                isCharging = true;                
             }
             
             if (chargeTimer >= 2f)
@@ -159,13 +160,21 @@ public class RhinoEnemy : MonoBehaviour
                 _agent.speed = 2f;
             }
         }
-        
-        
-        
-
-
     }
-    
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player" && isCharging == true)
+        {
+            anim.SetTrigger("DownBack");
+            Debug.Log("Hit");
+            _player.controller.Move(-Vector3.forward * Time.deltaTime * 32);
+            //_player._rigidbody.AddExplosionForce(1f, rhino.transform.position * -1, 3f, 1f, ForceMode.Impulse);
+            _player.playerHealth -= 50;
+
+        }
+    }
+
     void FaceTarget()
     {
         Vector3 direction = (_target.position - transform.position).normalized;

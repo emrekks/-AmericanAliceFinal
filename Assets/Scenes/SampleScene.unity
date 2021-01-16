@@ -147,7 +147,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 3
 --- !u!65 &110959405
 BoxCollider:
@@ -16916,8 +16916,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.068696335, y: -0.00000003433147, z: -0.0000000023640307,
-    w: 0.9976376}
+  m_LocalRotation: {x: -0.068696335, y: 0.00000003433147, z: 0.0000000023640307, w: 0.9976376}
   m_LocalPosition: {x: -187.75, y: 6.25, z: -6.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17179,6 +17178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf1390844e7d7b47a427dbce05fc834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 0}
   iceStaff: {fileID: 1121159430}
   iceParticles: {fileID: 916000607}
   playerHealth: 1000
@@ -22754,8 +22754,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658518074}
-  m_LocalRotation: {x: -0.06869632, y: -0.000000017165735, z: -0.0000000011820153,
-    w: 0.9976376}
+  m_LocalRotation: {x: -0.06869632, y: 0.000000017165735, z: 0.0000000011820153, w: 0.9976376}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -28374,13 +28373,16 @@ MonoBehaviour:
   rhinoArmor: 0
   rhinoDamage: 0
   rhino: {fileID: 0}
+  _player: {fileID: 1214942654}
   lookRadius: 15
+  anim: {fileID: 1214942655}
   playerSeen: 0
   smashAttackRadius: 3
   smashHitRadius: 5
   isSmashing: 0
   chargeAttackRadius: 13
   isCharging: 0
+  isTired: 0
 --- !u!136 &2109428700
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28388,7 +28390,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109428698}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fa0dde6cf334bd94da3cee10463eadc4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -28468,10 +28470,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!195 &2109428705
 NavMeshAgent:
   m_ObjectHideFlags: 0
