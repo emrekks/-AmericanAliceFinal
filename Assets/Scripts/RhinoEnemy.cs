@@ -53,6 +53,7 @@ public class RhinoEnemy : MonoBehaviour
     private float tiredTimer = 0f;
     public bool isTired = false;
     private bool isStopped;
+    public bool cantCharge;
 
 
     #endregion
@@ -84,7 +85,11 @@ public class RhinoEnemy : MonoBehaviour
 
         if (_rhinoAttack.hitPlayer == true)
         {
-            isStopped;
+            isStopped = true;
+        }
+        else
+        {
+            isStopped = false;
         }
         
         
@@ -113,7 +118,7 @@ public class RhinoEnemy : MonoBehaviour
         }
         
         //RhinoCharge
-        if (distance <= chargeAttackRadius && isSmashing == false)
+        if (distance <= chargeAttackRadius && isSmashing == false && cantCharge == false)
         {
             chargeTimer += Time.deltaTime;
             

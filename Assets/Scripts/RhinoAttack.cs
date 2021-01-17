@@ -16,6 +16,7 @@ public class RhinoAttack : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && _rhinoEnemy.isCharging == true && hitPlayer == false)
         {
             hitPlayer = true;
+            _rhinoEnemy.cantCharge = true;
             anim.SetTrigger("DownBack");
             Debug.Log("Hit");
             _player.controller.Move(Vector3.forward * Time.deltaTime * -32);
