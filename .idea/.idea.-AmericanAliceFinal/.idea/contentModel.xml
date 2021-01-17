@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="AimLockAnimation.cs" t="Include" />
+          <e p="AudioManager.cs" t="Include" />
           <e p="AutoAim.cs" t="Include" />
           <e p="AxeController.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
