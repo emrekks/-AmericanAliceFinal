@@ -192,7 +192,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (axeCol.gameObject || ballCol.gameObject)
+        if (other.gameObject.tag == "Axe" || other.gameObject.tag == "MagicBall")
         {
             enemyHealth -= /*playerDamage*/ 50;
             EnemyHit();
