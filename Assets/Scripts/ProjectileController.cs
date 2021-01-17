@@ -43,9 +43,9 @@ public class ProjectileController : MonoBehaviour
 
         if (distance > attackRange || ballTimer >= 5f)
         {
-            gameObject.SetActive(false);
             ballTimer = 0f;
             _rigidbody.isKinematic = true;
+            gameObject.SetActive(false);
         }
     }
 
@@ -71,6 +71,8 @@ public class ProjectileController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            ballTimer = 0f;
+            _rigidbody.isKinematic = true;
             gameObject.SetActive(false);
         }
     }
