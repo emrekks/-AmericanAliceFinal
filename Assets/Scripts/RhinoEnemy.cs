@@ -30,6 +30,9 @@ public class RhinoEnemy : MonoBehaviour
 
     [SerializeField]private bool playerSeen = false;
 
+    private float stoppingDistance = 1f;
+    [SerializeField]private bool inStoppingDistance = false;
+
     #region RhinoSmash
     
     public float smashAttackRadius = 3f;
@@ -47,7 +50,7 @@ public class RhinoEnemy : MonoBehaviour
     private float chargeStartedTimer = 0f;
     public bool isCharging = false;
     private float tiredTimer = 0f;
-    [SerializeField]private bool isTired = false;
+    public bool isTired = false;
     
 
     #endregion
@@ -56,15 +59,27 @@ public class RhinoEnemy : MonoBehaviour
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
+        stoppingDistance = _agent.stoppingDistance;
         rhino = this.gameObject;
         _agent.speed = 2f;
     }
 
     
     void Update()
-    {
+    { 
         float distance = Vector3.Distance(_target.position, transform.position);
 
+
+        if (distance <= _agent.stoppingDistance)
+        {
+            inStoppingDistance = true;
+        }
+        else
+        {
+            inStoppingDistance = false;
+        }
+        
+        
         //RhinoLook
         if (distance <= lookRadius)
         {
@@ -162,20 +177,16 @@ public class RhinoEnemy : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player" && isCharging == true)
-        {
-            anim.SetTrigger("DownBack");
-            Debug.Log("Hit");
-            _player.controller.Move(-Vector3.forward * Time.deltaTime * 32);
-            //_player._rigidbody.AddExplosionForce(1f, rhino.transform.position * -1, 3f, 1f, ForceMode.Impulse);
-            _player.playerHealth -= 50;
-            isTired = true;
-            isCharging = false;
-
-        }
-    }
+    // void OnCollisionEnter(Collision other)
+    // {
+    //     if (/*other.gameObject.tag == "Player"*/ inStoppingDistance == true)
+    //     {
+    //         
+    //         //_player._rigidbody.AddExplosionForce(1f, rhino.transform.position * -1, 3f, 1f, ForceMode.Impulse);
+    //         
+    //
+    //     }
+    // }
 
     void FaceTarget()
     {

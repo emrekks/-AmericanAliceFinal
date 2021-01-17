@@ -17,10 +17,13 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="ProjectileController.cs" t="Include" />
+          <e p="RhinoAttack.cs" t="Include" />
           <e p="RhinoEnemy.cs" t="Include" />
           <e p="SeeHiddenObject.cs" t="Include" />
           <e p="ThrowAxe.cs" t="Include" />
+          <e p="ThrowingDice.cs" t="Include" />
           <e p="WeaponController.cs" t="Include" />
+          <e p="WeaponDice.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

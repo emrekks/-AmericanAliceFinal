@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    
+
     //Rhino Attack
     private RhinoEnemy _rhinoEnemy;
     public Rigidbody _rigidbody;
