@@ -24,6 +24,7 @@ public class RhinoEnemy : MonoBehaviour
     public PlayerController _player;
     public float lookRadius = 15f;
     public Animator anim;
+    public RhinoAttack _rhinoAttack;
 
     private Transform _target;
     private NavMeshAgent _agent;
@@ -51,7 +52,8 @@ public class RhinoEnemy : MonoBehaviour
     public bool isCharging = false;
     private float tiredTimer = 0f;
     public bool isTired = false;
-    
+    private bool isStopped;
+
 
     #endregion
     
@@ -60,6 +62,7 @@ public class RhinoEnemy : MonoBehaviour
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
         stoppingDistance = _agent.stoppingDistance;
+        isStopped = gameObject.GetComponent<NavMeshAgent>().isStopped;
         rhino = this.gameObject;
         _agent.speed = 2f;
     }
@@ -77,6 +80,11 @@ public class RhinoEnemy : MonoBehaviour
         else
         {
             inStoppingDistance = false;
+        }
+
+        if (_rhinoAttack.hitPlayer == true)
+        {
+            isStopped;
         }
         
         
@@ -128,13 +136,13 @@ public class RhinoEnemy : MonoBehaviour
                     Debug.Log("Charged");
                 }
                 
-                if (chargeStartedTimer >= 2f)
+                if (chargeStartedTimer >= 2f || _rhinoAttack.hitPlayer == true)
                 {
                     _agent.speed = 0f;
                     tiredTimer += Time.deltaTime;
                     isTired = true;
                     isCharging = false;
-                    
+
                 }
                 
                 if (tiredTimer >= 2f && isTired == true)
@@ -144,6 +152,7 @@ public class RhinoEnemy : MonoBehaviour
                     chargeStartedTimer = 0f;
                     tiredTimer = 0f;
                     isTired = false;
+                    _rhinoAttack.hitPlayer = false;
 
                 }
             }
