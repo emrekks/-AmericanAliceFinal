@@ -171,6 +171,8 @@ public class RhinoEnemy : MonoBehaviour
             _player.controller.Move(-Vector3.forward * Time.deltaTime * 32);
             //_player._rigidbody.AddExplosionForce(1f, rhino.transform.position * -1, 3f, 1f, ForceMode.Impulse);
             _player.playerHealth -= 50;
+            isTired = true;
+            isCharging = false;
 
         }
     }

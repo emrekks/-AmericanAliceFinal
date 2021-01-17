@@ -97,6 +97,8 @@ public class EnemyController : MonoBehaviour
             {
                 Anim.SetFloat("speed",_agent.speed);
                 playerSeen = true;
+                FaceTarget();
+                lookRadius = 30f;
                 _agent.SetDestination(_target.position);
 
                 if (distance <= _agent.stoppingDistance)
@@ -107,6 +109,7 @@ public class EnemyController : MonoBehaviour
             else
             {
                 playerSeen = false;
+                lookRadius = 10f;
             }
             
             
