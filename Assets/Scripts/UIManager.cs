@@ -17,6 +17,9 @@ public class UIManager : MonoBehaviour
     #endregion
 
 
+    public string levelName;
+    
+
     void Start()
     {
         
@@ -31,8 +34,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("SampleScene");
-
+        SceneManager.LoadScene(levelName);
     }
 
 }
