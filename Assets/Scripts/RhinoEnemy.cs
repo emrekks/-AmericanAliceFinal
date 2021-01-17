@@ -27,7 +27,7 @@ public class RhinoEnemy : MonoBehaviour
     public RhinoAttack _rhinoAttack;
 
     private Transform _target;
-    private NavMeshAgent _agent;
+    public NavMeshAgent _agent;
 
     [SerializeField]private bool playerSeen = false;
 
@@ -53,7 +53,6 @@ public class RhinoEnemy : MonoBehaviour
     private float tiredTimer = 0f;
     public bool isTired = false;
     private bool isStopped;
-    public bool cantCharge;
 
 
     #endregion
@@ -86,10 +85,12 @@ public class RhinoEnemy : MonoBehaviour
         if (_rhinoAttack.hitPlayer == true)
         {
             isStopped = true;
+            _agent.Stop();
         }
         else
         {
             isStopped = false;
+            _agent.Resume();
         }
         
         
@@ -118,7 +119,7 @@ public class RhinoEnemy : MonoBehaviour
         }
         
         //RhinoCharge
-        if (distance <= chargeAttackRadius && isSmashing == false && cantCharge == false)
+        if (distance <= chargeAttackRadius && isSmashing == false)
         {
             chargeTimer += Time.deltaTime;
             
