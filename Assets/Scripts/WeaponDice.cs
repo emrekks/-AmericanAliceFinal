@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponDice : MonoBehaviour
 {
     public PlayerController character;
-    public Rigidbody rb;
+    public GameObject dicePrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +20,7 @@ public class WeaponDice : MonoBehaviour
 
     public void ThrowDice()
     {
-
-        rb.AddForce(Vector3.forward * Time.deltaTime, ForceMode.Impulse);
+        Instantiate(dicePrefab, this.transform.position, this.transform.rotation);
     }
 
     private void OnTriggerEnter(Collider other)

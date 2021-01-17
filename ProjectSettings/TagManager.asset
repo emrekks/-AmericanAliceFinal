@@ -18,6 +18,7 @@ TagManager:
   - GetDamageLeft
   - GetDamageRight
   - Rhino
+  - WeaponDice
   layers:
   - Default
   - TransparentFX

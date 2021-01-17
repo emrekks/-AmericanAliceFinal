@@ -244,7 +244,7 @@ public class PlayerController : MonoBehaviour
         //Dice
         if (Input.GetMouseButtonDown(0) && isChangingHandToDice == true)
         {
-            _dice.ThrowDice();
+            Anim.SetTrigger("DiceThrowing");
         }
 
 
@@ -376,6 +376,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void DiceThrow()
+    {
+        _dice.ThrowDice();
+    }
     public void Combo1()
     {
         if(noClick >= 2)

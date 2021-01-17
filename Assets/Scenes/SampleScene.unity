@@ -16916,8 +16916,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.068696335, y: -0.00000003433147, z: -0.0000000023640307,
-    w: 0.9976376}
+  m_LocalRotation: {x: -0.068696335, y: 0.00000003433147, z: 0.0000000023640307, w: 0.9976376}
   m_LocalPosition: {x: -187.75, y: 6.25, z: -6.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -17183,6 +17182,8 @@ MonoBehaviour:
   iceStaff: {fileID: 1121159430}
   iceParticles: {fileID: 916000607}
   playerHealth: 1000
+  weaponDice: {fileID: 2079740532}
+  DiceCount: 0
   isHandlingAxe: 1
   axeObject: {fileID: 110959402}
   AttackingColliderEnable: 0
@@ -17326,18 +17327,19 @@ MonoBehaviour:
   particleBlood: {fileID: 1962336684}
   particleRing: {fileID: 2144640410}
   ringObject: {fileID: 2144640407}
---- !u!114 &1214942661
-MonoBehaviour:
+--- !u!65 &1214942661
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214942653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80b00efa0fa46d24fbf3991bdb47264f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Size: {x: 0.88, y: 1.53, z: 0.85}
+  m_Center: {x: 0.0909729, y: 0.90433407, z: 0.11182213}
 --- !u!135 &1252487855 stripped
 SphereCollider:
   m_CorrespondingSourceObject: {fileID: 2835915668785823689, guid: eaaa337ca93f9aa4b8dbafde88015aeb,
@@ -17356,9 +17358,11 @@ GameObject:
   - component: {fileID: 1323963821}
   - component: {fileID: 1323963820}
   - component: {fileID: 1323963819}
+  - component: {fileID: 1323963823}
+  - component: {fileID: 1323963824}
   m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
+  m_Name: Dice
+  m_TagString: WeaponDice
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17431,12 +17435,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323963818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -190.83, y: 5.54, z: -0.13}
+  m_LocalPosition: {x: -190.83, y: 5.03, z: -0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1323963823
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323963818}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1323963824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323963818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128c89a0552f8504da51ef57f2c025d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  dicePrefab: {fileID: 0}
 --- !u!1 &1355136590
 GameObject:
   m_ObjectHideFlags: 0
@@ -22848,8 +22882,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658518074}
-  m_LocalRotation: {x: -0.06869632, y: -0.000000017165735, z: -0.0000000011820153,
-    w: 0.9976376}
+  m_LocalRotation: {x: -0.06869632, y: 0.000000017165735, z: 0.0000000011820153, w: 0.9976376}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -28398,6 +28431,101 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075525781}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2079740532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079740533}
+  - component: {fileID: 2079740534}
+  - component: {fileID: 2079740536}
+  - component: {fileID: 2079740535}
+  m_Layer: 0
+  m_Name: Dice
+  m_TagString: WeaponDice
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2079740533
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079740532}
+  m_LocalRotation: {x: 0.36762133, y: 0.07151445, z: 0.32658544, w: 0.8678031}
+  m_LocalPosition: {x: 0.07199834, y: -0.022001784, z: 0.047000103}
+  m_LocalScale: {x: 0.10000003, y: 0.10000002, z: 0.09999997}
+  m_Children: []
+  m_Father: {fileID: 1981003778}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: -12.428, y: -12.518001, z: 0}
+--- !u!114 &2079740534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079740532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128c89a0552f8504da51ef57f2c025d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1214942654}
+  dicePrefab: {fileID: 5385104888435954704, guid: 3de3b68fa782b184a94f9b7bc8048940,
+    type: 3}
+--- !u!33 &2079740535
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079740532}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2079740536
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079740532}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 8506a9115cf7d864fa6a6704a851ac5a, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &2095863229
 GameObject:
   m_ObjectHideFlags: 0
