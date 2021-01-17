@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     #region Singleton
@@ -24,6 +24,15 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        
+       
+
     }
+    
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("SampleScene");
+
+    }
+
 }
