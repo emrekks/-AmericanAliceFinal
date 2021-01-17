@@ -116,11 +116,11 @@ public class EnemyController : MonoBehaviour
             if (distance <= attackRadius || this.Anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
                 isAttack = true;
-                _agent.speed = 1f;               
+                _agent.speed = 0;               
             }
             else
             {
-                _agent.speed = 3;
+                _agent.speed = 2;
                 isAttack = false;
             }
             

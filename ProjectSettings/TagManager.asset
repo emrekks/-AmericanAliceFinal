@@ -19,6 +19,7 @@ TagManager:
   - GetDamageRight
   - Rhino
   - WeaponDice
+  - MagicBall
   layers:
   - Default
   - TransparentFX
