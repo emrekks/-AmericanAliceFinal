@@ -24,10 +24,17 @@ public class PlayerController : MonoBehaviour
     private ThrowAxe _throwAxe;
     private PlayerController _playerController;
     private GlideScript _glideScript;
+    private WeaponDice _dice;
 
     //Health
     public int playerHealth = 100;
     private bool playerDead = false;
+
+    //Dice
+    public GameObject weaponDice;
+    public int DiceCount = 0;
+    private bool isDiceHandling = false;
+
 
     //Axe
     public bool isHandlingAxe = false;
@@ -93,11 +100,12 @@ public class PlayerController : MonoBehaviour
 
     //SwitchWeapon
     private bool switchingWeapon;
-    private bool isChangingHandToAxe, isChangingHandToStaff;
+    private bool isChangingHandToAxe, isChangingHandToStaff, isChangingHandToIceStaff, isChangingHandToDice;
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _weaponController = GameObject.FindObjectOfType<WeaponController>();
+        _dice = GameObject.FindObjectOfType<WeaponDice>();
         _throwAxe = GameObject.FindObjectOfType<ThrowAxe>();
         _playerController = GetComponent<PlayerController>();
         _glideScript = GameObject.FindObjectOfType<GlideScript>();
@@ -180,30 +188,45 @@ public class PlayerController : MonoBehaviour
         //Weapon Selection
         if (Input.GetKeyDown(KeyCode.Alpha1) && !axeObject.activeInHierarchy)
         {
-            iceStaff.SetActive(false);
             isChangingHandToAxe = true;
             isChangingHandToStaff = false;
+            isChangingHandToDice = false;
+            isChangingHandToIceStaff = false;
+
             switchingWeapon = true;
             Anim.SetTrigger("UnarmedToWeapon");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && !staff.activeInHierarchy)
         {
-            iceStaff.SetActive(false);
             isChangingHandToStaff = true;
             isChangingHandToAxe = false;
+            isChangingHandToDice = false;
+            isChangingHandToIceStaff = false;
+
             switchingWeapon = true;
             Anim.SetTrigger("UnarmedToWeapon");
         }
         if (Input.GetKeyDown((KeyCode.Alpha3)) && !iceStaff.activeInHierarchy)
         {
-            // isChangingHandToAxe = false;
-            // isChangingHandToStaff = false;
-            // switchingWeapon = true;
-            // Anim.SetTrigger("UnarmedToWeapon");
-            
-            axeObject.SetActive(false);
-            staff.SetActive(false);
-            iceStaff.SetActive(true);
+            isChangingHandToAxe = false;
+            isChangingHandToStaff = false;
+            isChangingHandToDice = false;
+            isChangingHandToIceStaff = true;
+          
+            switchingWeapon = true;
+            Anim.SetTrigger("UnarmedToWeapon");
+
+        }
+
+        if (Input.GetKeyDown((KeyCode.Alpha4)) && !weaponDice.activeInHierarchy)
+        {
+            isChangingHandToAxe = false;
+            isChangingHandToStaff = false;
+            isChangingHandToDice = true;
+            isChangingHandToIceStaff = false;
+
+            switchingWeapon = true;
+            Anim.SetTrigger("UnarmedToWeapon");
         }
 
         //Glide
@@ -218,6 +241,11 @@ public class PlayerController : MonoBehaviour
             Gliding = false;
         }
 
+        //Dice
+        if (Input.GetMouseButtonDown(0) && isChangingHandToDice == true)
+        {
+            _dice.ThrowDice();
+        }
 
 
         //Health
@@ -440,7 +468,8 @@ public class PlayerController : MonoBehaviour
         {
             staff.SetActive(false);
             axeObject.SetActive(true);
-            staff.SetActive(false);
+            weaponDice.SetActive(false);
+            iceStaff.SetActive(false);
             switchingWeapon = false;
         }
 
@@ -448,7 +477,26 @@ public class PlayerController : MonoBehaviour
         {
             axeObject.SetActive(false);
             staff.SetActive(true);
+            weaponDice.SetActive(false);
+            iceStaff.SetActive(false);
+            switchingWeapon = false;
+        }
+
+        if (isChangingHandToIceStaff == true)
+        {
             axeObject.SetActive(false);
+            staff.SetActive(false);
+            iceStaff.SetActive(true);
+            weaponDice.SetActive(false);
+            switchingWeapon = false;
+        }
+
+        if (isChangingHandToDice == true)
+        {
+            axeObject.SetActive(false);
+            staff.SetActive(false);
+            iceStaff.SetActive(false);
+            weaponDice.SetActive(true);
             switchingWeapon = false;
         }
 
