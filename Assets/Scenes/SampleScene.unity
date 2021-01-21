@@ -7186,7 +7186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &647096684
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9651,25 +9651,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: -21.955002, y: 93.159004, z: 0}
---- !u!95 &1519574719
-Animator:
-  serializedVersion: 3
+--- !u!111 &1519574719
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519574715}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2a411cb1395860746914c7adbc38a1f7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 679e240e58923a84ba53475c6eb4a7c7, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 679e240e58923a84ba53475c6eb4a7c7, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1529375371
 GameObject:
   m_ObjectHideFlags: 0
@@ -9698,7 +9695,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 1}
+  m_Color: {r: 0.009433985, g: 0.008677486, b: 0.008677486, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
