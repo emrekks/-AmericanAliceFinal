@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Houses/House tri 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Houses/House tri 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Table bot.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Table bot.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Table top.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Table top.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Top Grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Top Grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/agac.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/agac.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/kok.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/kok.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lamba_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lamba_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tutorial_LD_LAST2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tutorial_LD_LAST2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/grass-seamless-web-tile_zJF8f3wO_thumb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/grass-seamless-web-tile_zJF8f3wO_thumb.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +41,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EyeLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
@@ -103,6 +115,7 @@
       <workItem from="1610890207529" duration="1482000" />
       <workItem from="1610911045151" duration="9730000" />
       <workItem from="1611224497626" duration="831000" />
+      <workItem from="1611262390329" duration="1254000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@
           <e p="AudioManager.cs" t="Include" />
           <e p="AutoAim.cs" t="Include" />
           <e p="AxeController.cs" t="Include" />
+          <e p="Cinematic.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
           <e p="EyeLook.cs" t="Include" />
           <e p="GlideScript.cs" t="Include" />
