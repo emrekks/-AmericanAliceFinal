@@ -9,6 +9,7 @@ public class Cinematic : MonoBehaviour
     public PlayerController _playerController;
     public Camera mainCamera;
     public GameObject cutsceneCamera;
+    public GameObject crosshair;
 
 
     void Start()
@@ -24,6 +25,7 @@ public class Cinematic : MonoBehaviour
         yield return new WaitForSeconds(6.2f);
         mainCamera.enabled = true;
         cutsceneCamera.SetActive(false);
+        crosshair.SetActive(true);
     }
 
 }
