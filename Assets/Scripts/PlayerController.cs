@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Falling 
+    private bool StartFalling = true;
+
 
     //Rhino Attack
     private RhinoEnemy _rhinoEnemy;
@@ -118,12 +121,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.T))
         {
             ChangeScale();
         }
-        
+
         if (devilOpen == true)
         {
             devilFormTimer += Time.deltaTime;
@@ -168,7 +171,12 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("ForwardRunningRight", ForwardRight);
         Anim.SetBool("ForwardRunningLeft", ForwardLeft);
         Anim.SetBool("Gliding", Gliding);
+        Anim.SetBool("StartFalling", StartFalling);
 
+        if (grounded)
+        {
+            StartFalling = false;
+        }
 
         //Crouch
         if (Input.GetKeyDown(KeyCode.LeftControl))
