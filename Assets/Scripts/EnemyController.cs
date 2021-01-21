@@ -28,8 +28,10 @@ public class EnemyController : MonoBehaviour
 
     #endregion
 
-    public float enemyBlockTimer = 0f;
+   //public float enemyBlockTimer = 0f;
 
+
+   public float destroyTimer = 0f;
 
     public bool playerSeen = false;
 
@@ -67,14 +69,14 @@ public class EnemyController : MonoBehaviour
     private Transform _target;
     public NavMeshAgent _agent;
 
-    private CapsuleCollider thisEnemyCollider;
+    private Collider thisEnemyCollider;
 
     void Start()
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
         enemyController = GetComponent<EnemyController>();
-        thisEnemyCollider = GetComponent<CapsuleCollider>();
+        thisEnemyCollider = gameObject.GetComponent<Collider>();
     }
 
     void Update()
@@ -86,6 +88,18 @@ public class EnemyController : MonoBehaviour
         if (distance <= chaseRadius)
         {
             FaceTarget();
+        }
+        
+        
+        //Enemy Dead
+        if (isDead == true)
+        {
+            destroyTimer += Time.deltaTime;
+
+            if (destroyTimer <= 10f)
+            {
+                gameObject.SetActive(false);
+            }
         }
         
         
@@ -164,7 +178,7 @@ public class EnemyController : MonoBehaviour
 
     
     
-    //Enemy Block
+    /*//Enemy Block
     void EnemyBlock()
     {
         if (enemyHealth < 100)
@@ -183,7 +197,7 @@ public class EnemyController : MonoBehaviour
                 isBlock = false;
             }
         }
-    }
+    }*/
 
     void EnemyHit()
     {
@@ -216,6 +230,7 @@ public class EnemyController : MonoBehaviour
     void EnemyDeath()
     {
         isDead = true;
+        thisEnemyCollider.enabled = false;
         Anim.SetBool("death",isDead);
         // Anim.SetTrigger("death");
         enemyController.enabled = false;
