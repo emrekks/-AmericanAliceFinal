@@ -17,4 +17,28 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     public GameObject player;
+
+    [SerializeField]private float destroyTimer = 0f;
+
+    public bool heIsDead = false;
+    void Update()
+    {
+
+        if (EnemyController.Instance.isDead == true)
+        {
+            heIsDead = true;
+        }
+        
+        
+        
+        if (heIsDead == true)
+        {
+            destroyTimer += Time.deltaTime;
+
+            if (destroyTimer <= 10f)
+            {
+                EnemyController.Instance._enemy.gameObject.SetActive(false);
+            }
+        }
+    }
 }

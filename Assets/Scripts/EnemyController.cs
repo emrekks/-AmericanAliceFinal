@@ -31,13 +31,13 @@ public class EnemyController : MonoBehaviour
    //public float enemyBlockTimer = 0f;
 
 
-   public float destroyTimer = 0f;
+   
 
     public bool playerSeen = false;
 
     public Animator Anim;
 
-    private bool isDead = false;
+    public bool isDead = false;
 
     public float enemyAttackTimer = 0f;
     private bool isAttack = false;
@@ -71,12 +71,15 @@ public class EnemyController : MonoBehaviour
 
     private Collider thisEnemyCollider;
 
+    public GameObject _enemy;
+
     void Start()
     {
         _target = PlayerManager.instance.player.transform;
         _agent = GetComponent<NavMeshAgent>();
         enemyController = GetComponent<EnemyController>();
         thisEnemyCollider = gameObject.GetComponent<Collider>();
+        _enemy = gameObject;
     }
 
     void Update()
@@ -90,17 +93,6 @@ public class EnemyController : MonoBehaviour
             FaceTarget();
         }
         
-        
-        //Enemy Dead
-        if (isDead == true)
-        {
-            destroyTimer += Time.deltaTime;
-
-            if (destroyTimer <= 10f)
-            {
-                gameObject.SetActive(false);
-            }
-        }
         
         
 
