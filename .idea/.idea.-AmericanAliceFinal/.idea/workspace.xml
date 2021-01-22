@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="" />
+    <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lamba_1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lamba_1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tutorial_LD_LAST2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tutorial_LD_LAST2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lamba_vol2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/lamba_vol2.fbx.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +36,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Tornado.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
@@ -103,6 +112,7 @@
       <workItem from="1611224497626" duration="831000" />
       <workItem from="1611262390329" duration="1255000" />
       <workItem from="1611272498688" duration="1043000" />
+      <workItem from="1611275702249" duration="762000" />
     </task>
     <servers />
   </component>

@@ -25,6 +25,7 @@
           <e p="SeeHiddenObject.cs" t="Include" />
           <e p="ThrowAxe.cs" t="Include" />
           <e p="ThrowingDice.cs" t="Include" />
+          <e p="Tornado.cs" t="Include" />
           <e p="UIManager.cs" t="Include" />
           <e p="WeaponController.cs" t="Include" />
           <e p="WeaponDice.cs" t="Include" />
