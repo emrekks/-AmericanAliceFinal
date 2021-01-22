@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Wall2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Wall2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" afterDir="false" />
-    </list>
+    <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,8 +26,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EyeLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
@@ -106,7 +102,7 @@
       <workItem from="1610911045151" duration="9730000" />
       <workItem from="1611224497626" duration="831000" />
       <workItem from="1611262390329" duration="1255000" />
-      <workItem from="1611272498688" duration="316000" />
+      <workItem from="1611272498688" duration="1043000" />
     </task>
     <servers />
   </component>
