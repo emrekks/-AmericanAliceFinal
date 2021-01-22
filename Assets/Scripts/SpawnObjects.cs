@@ -47,12 +47,7 @@ public class SpawnObjects : MonoBehaviour
 
      void SpawnIt()
     {
-        //spawn our coin:
-        //Instantiate(objToSpawn, transform.position, Quaternion.identity);
-        //Vector3 screenPosition = cam.ScreenToWorldPoint(new Vector3(Random.Range(0,Screen.width), Random.Range(0,Screen.height), cam.farClipPlane/2));
         Instantiate(objToSpawn,referance.transform.position,Quaternion.identity);
-        cube=GameObject.FindGameObjectWithTag("npc");
-        
-      
+        cube=GameObject.FindGameObjectWithTag("Npc");
     }
 }

@@ -23,6 +23,7 @@ TagManager:
   - Lightning1
   - Lightning2
   - PauseMenu
+  - Npc
   layers:
   - Default
   - TransparentFX
