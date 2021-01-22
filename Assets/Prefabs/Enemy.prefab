@@ -296,7 +296,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5832386fbf20f9449c6bc23a43a29f9, type: 2}
+  - {fileID: 2100000, guid: 0bfe9fc945319514ead929887071879c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -433,19 +433,6 @@ Transform:
   m_Father: {fileID: 3661796050259793847}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -12.695876, y: -1.1508045, z: -2.0317895}
---- !u!65 &2634670270551059149
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905195006054564579}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 0.044568054, y: 0.26021728, z: 0.013603893}
-  m_Center: {x: -0.0021476771, y: 0.13109492, z: 0.0009597765}
 --- !u!1 &2668105932850780914
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +661,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &2634670270551059149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905195006054564579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.044568054, y: 0.26021728, z: 0.013603893}
+  m_Center: {x: -0.0021476771, y: 0.13109492, z: 0.0009597765}
 --- !u!1 &2978651986087278604
 GameObject:
   m_ObjectHideFlags: 0

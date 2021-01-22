@@ -47,9 +47,14 @@ public class HysteriaMode : MonoBehaviour
         {
             RingMove();
         }
+        else if (particleRingOpen == false)
+        {
+            particleRing.Clear();
+            particleRing.Stop();
+        }
         
         
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H) && hysteriaOpen == false)
         {
             RenderSettings.fogDensity = 0.06f;
             hysteriaOpen = true;
@@ -68,13 +73,13 @@ public class HysteriaMode : MonoBehaviour
             
             if (hysteriaTimer >= 5f)
             {
-                hysteriaTimer = 0f;
-                hysteriaOpen = false;
                 player.material = playerMat;
                 enemy.material = enemyMat;
                 environment.material = environmentMat;
                 RenderSettings.fogDensity = 0f;
                 particleRingOpen = false;
+                hysteriaTimer = 0f;
+                hysteriaOpen = false;
             }
         }
     }
