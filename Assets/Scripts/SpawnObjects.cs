@@ -8,29 +8,25 @@ public class SpawnObjects : MonoBehaviour
     public Camera cam;
     public GameObject referance;
     public float Timer = 0f;
-    public GameObject objToSpawn;
     public bool spawn = false;
-    private GameObject cube;
+    public GameObject cat;
+    public GameObject textScreen;
 
 
-     void Start()
+    void Start()
     {
         cam = Camera.main;
-        
+        cat = GameObject.FindGameObjectWithTag("Npc");
     }
 
 
      void Update()
     {
+        
         if (spawn == true)
         {
-            Timer += Time.deltaTime;  
-            if(Timer >= 5f)
-            {
-                Destroy(cube);
-                Timer = 0f;
-                spawn = false;
-            }
+            textScreen.SetActive(true);
+            cat.SetActive(true);
         }
         
         
@@ -38,7 +34,6 @@ public class SpawnObjects : MonoBehaviour
         {
             SpawnIt();
             spawn = true;
-
         }
        
         
@@ -46,8 +41,7 @@ public class SpawnObjects : MonoBehaviour
 
 
      void SpawnIt()
-    {
-        Instantiate(objToSpawn,referance.transform.position,Quaternion.identity);
-        cube=GameObject.FindGameObjectWithTag("Npc");
-    }
+     {
+         Instantiate(cat, referance.transform.position, Quaternion.identity);
+     }
 }
