@@ -22,6 +22,7 @@ TagManager:
   - MagicBall
   - Lightning1
   - Lightning2
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

@@ -18,16 +18,33 @@ public class UIManager : MonoBehaviour
 
 
     public string levelName;
+
+    public GameObject pauseMenu;
+    private bool pauseOpen = false;
     
 
     void Start()
     {
-        
+       // pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
     }
 
     void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            if (pauseOpen == false)
+            {
+                pauseMenu.SetActive(true);
+                pauseOpen = true;
+                Time.timeScale = 0f;
+            }
+            else if(pauseOpen == true)
+            {
+                pauseMenu.SetActive(false);
+                pauseOpen = false;
+                Time.timeScale = 1f;
+            }
+        }
 
     }
     
