@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
@@ -99,6 +100,8 @@ public class PlayerController : MonoBehaviour
     private bool ForwardRight = false;
     private bool ForwardLeft = false;
 
+    //Scene
+    Scene m_Scene;
 
 
     //SwitchWeapon
@@ -117,10 +120,12 @@ public class PlayerController : MonoBehaviour
         playerScale = gameObject.transform.localScale;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        m_Scene = SceneManager.GetActiveScene();
     }
 
     void Update()
     {
+        string sceneName = m_Scene.name;
 
         if (Input.GetKeyDown(KeyCode.T))
         {
@@ -171,7 +176,11 @@ public class PlayerController : MonoBehaviour
         Anim.SetBool("ForwardRunningRight", ForwardRight);
         Anim.SetBool("ForwardRunningLeft", ForwardLeft);
         Anim.SetBool("Gliding", Gliding);
-        Anim.SetBool("StartFalling", StartFalling);
+        if (sceneName == "SampleScene")
+        {
+            Anim.SetBool("StartFalling", StartFalling);
+        }
+
 
         if (grounded)
         {
@@ -248,6 +257,10 @@ public class PlayerController : MonoBehaviour
         {
             Gliding = false;
         }
+        
+
+
+        Debug.Log(_glideScript.GlideBool);
 
         //Dice
         if (Input.GetMouseButtonDown(0) && isChangingHandToDice == true)

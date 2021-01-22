@@ -126,7 +126,7 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                _agent.speed = 2;
+                _agent.speed = 5;
                 isAttack = false;
             }
             
