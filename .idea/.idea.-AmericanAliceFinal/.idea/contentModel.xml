@@ -17,6 +17,8 @@
           <e p="EyeLook.cs" t="Include" />
           <e p="GlideScript.cs" t="Include" />
           <e p="HysteriaMode.cs" t="Include" />
+          <e p="LevelUp.cs" t="Include" />
+          <e p="NpcLevel2.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
           <e p="Portal.cs" t="Include" />

@@ -24,6 +24,8 @@ TagManager:
   - Lightning2
   - PauseMenu
   - Npc
+  - NpcLittle
+  - Level2
   layers:
   - Default
   - TransparentFX

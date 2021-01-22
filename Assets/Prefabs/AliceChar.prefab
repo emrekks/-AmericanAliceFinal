@@ -859,7 +859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3845996505342041108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.177, z: 2.492}
+  m_LocalPosition: {x: 0, y: 0.71, z: 2.492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6614587568422869154}
@@ -1475,11 +1475,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   referance: {fileID: 0}
-  Timer: 0
-  objToSpawn: {fileID: 0}
   spawn: 0
+  cat: {fileID: 0}
+  textScreen: {fileID: 0}
+  text: {fileID: 0}
+  firstCalled: 0
+  level1: 1
+  level2: 0
+  npcLittle: 0
 --- !u!114 &6647600177380606724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1518,11 +1522,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   referance: {fileID: 0}
-  Timer: 0
-  objToSpawn: {fileID: 0}
   spawn: 0
+  cat: {fileID: 0}
+  textScreen: {fileID: 0}
+  text: {fileID: 0}
+  firstCalled: 0
+  level1: 1
+  level2: 0
+  npcLittle: 0
 --- !u!1 &5834693697845391382
 GameObject:
   m_ObjectHideFlags: 0

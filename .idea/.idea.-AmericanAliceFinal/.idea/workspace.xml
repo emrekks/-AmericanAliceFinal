@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/alicefinal cutscene.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/alicefinal cutscene.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AliceChar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AliceChar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skitters_with_Eye_Box001.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skitters_with_Eye_Box001.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/lamp_son_hali.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/lamp_son_hali.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial_LD.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial_LD.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +26,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhinoAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Portal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeLook.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,6 +49,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Portal.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WeaponController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
@@ -115,7 +126,8 @@
       <workItem from="1611262390329" duration="1255000" />
       <workItem from="1611272498688" duration="1043000" />
       <workItem from="1611275702249" duration="762000" />
-      <workItem from="1611316536051" duration="13301000" />
+      <workItem from="1611316536051" duration="13887000" />
+      <workItem from="1611344141737" duration="3253000" />
     </task>
     <servers />
   </component>
