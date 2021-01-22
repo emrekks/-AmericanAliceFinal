@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial_LD.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial_LD.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,7 @@
       <workItem from="1611262390329" duration="1255000" />
       <workItem from="1611272498688" duration="1043000" />
       <workItem from="1611275702249" duration="762000" />
-      <workItem from="1611316536051" duration="5602000" />
+      <workItem from="1611316536051" duration="6269000" />
     </task>
     <servers />
   </component>
