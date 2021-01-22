@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SpawnObjects : MonoBehaviour
 {
-   
-    public Camera cam;
+    
     public GameObject referance;
-    public float Timer = 0f;
     public bool spawn = false;
     public GameObject cat;
     public GameObject textScreen;
@@ -15,7 +13,6 @@ public class SpawnObjects : MonoBehaviour
 
     void Start()
     {
-        cam = Camera.main;
         cat = GameObject.FindGameObjectWithTag("Npc");
     }
 
@@ -35,7 +32,6 @@ public class SpawnObjects : MonoBehaviour
             SpawnIt();
             spawn = true;
         }
-       
         
     }
 
