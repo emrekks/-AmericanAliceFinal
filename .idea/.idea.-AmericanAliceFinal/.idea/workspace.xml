@@ -14,35 +14,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NpcLevel2.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhinoAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Portal.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeLook.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RhinoAttack.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EyeLook.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ProjectileController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Cinematic.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Tornado.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Thunder.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Portal.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/WeaponController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/NpcLevel2.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,7 +48,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -78,7 +57,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -120,6 +99,7 @@
       <workItem from="1611275702249" duration="762000" />
       <workItem from="1611316536051" duration="13887000" />
       <workItem from="1611344141737" duration="4359000" />
+      <workItem from="1611356659780" duration="1229000" />
     </task>
     <servers />
   </component>

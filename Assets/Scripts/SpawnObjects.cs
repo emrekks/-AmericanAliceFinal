@@ -19,6 +19,11 @@ public class SpawnObjects : MonoBehaviour
     public bool level2 = false;
     public bool npcLittle = false;
     public LevelUp levelUp;
+    public AudioSource welcome;
+    public AudioSource portal;
+    public AudioSource dungeon;
+    public AudioSource shrink;
+    public AudioSource tired;
 
 
     void Start()
@@ -57,12 +62,14 @@ public class SpawnObjects : MonoBehaviour
                 text.text = "Go to the portal and save us from queen's men.";
                 textScreen.SetActive(true);
                 spawn = true;
+                portal.Play();
             }
             else if (firstCalled == false && level1 == true && npcLittle == false)
             {
                 textScreen.SetActive(true);
                 firstCalled = true;
                 spawn = true;
+                welcome.Play();
             }
 
             if (firstCalled == true && level2 == true && npcLittle == false)
@@ -70,19 +77,23 @@ public class SpawnObjects : MonoBehaviour
                 text.text = "We are tired of both the queen and her men.";
                 textScreen.SetActive(true);
                 spawn = true;
+                tired.Play();
             }
             else if (firstCalled == false && level2 == true && npcLittle == false)
             {
                 textScreen.SetActive(true);
                 firstCalled = true;
                 spawn = true;
+                dungeon.Play();
+                
             }
 
             if (npcLittle == true)
             {
-                text.text = "It is time to get smaller.";
+                text.text = "What are you waiting for to shrink?";
                 textScreen.SetActive(true);
                 spawn = true;
+                shrink.Play();
             }
 
         }
