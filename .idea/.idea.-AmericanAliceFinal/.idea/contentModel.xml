@@ -19,6 +19,7 @@
           <e p="HysteriaMode.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerManager.cs" t="Include" />
+          <e p="Portal.cs" t="Include" />
           <e p="ProjectileController.cs" t="Include" />
           <e p="RhinoAttack.cs" t="Include" />
           <e p="RhinoEnemy.cs" t="Include" />
