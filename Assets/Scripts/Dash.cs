@@ -25,6 +25,7 @@ public class Dash : MonoBehaviour
 
     private bool weapon1changed;
     private bool weapon2changed;
+    public AudioSource dashAudio;
     
     
     
@@ -56,8 +57,8 @@ public class Dash : MonoBehaviour
                  weapon2off = true;
                  weapon1off = false;
              }
-             
-             
+
+             dashAudio.Play();
              _dashobject.SetActive(true);
              
             StartCoroutine(Dashs());

@@ -92,11 +92,16 @@ public class PlayerController : MonoBehaviour
     public bool isHandlingWand = false;
     public GameObject staff;
     public AudioSource staffAttackSound;
+    public AudioSource meleeSound;
+    public AudioSource throwAxeSound;
+    public AudioSource walking;
+    public AudioSource jump;
 
     //Objects
     public Transform Cam;
     private Animator Anim;
     public Collider Character, Axe;
+    public GameObject dashObject;
 
     //Animator Condition
     private bool ForwardRight = false;
@@ -154,8 +159,20 @@ public class PlayerController : MonoBehaviour
         //When character movement this code take reference
         if (direction.magnitude >= 0.1f)
         {
+            if (!walking.isPlaying && grounded && !dashObject.activeInHierarchy)
+            {
+                walking.Play();
+            }
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * playerSpeed * Time.deltaTime);
+        }
+        else
+        {
+            walking.Stop();
+        }
+        if (dashObject.activeInHierarchy)
+        {
+            walking.Stop();
         }
 
 
@@ -352,12 +369,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && isHandlingAxe == true && !Input.GetMouseButton(1))
         {
-            lastClickedTime = Time.time;
+            lastClickedTime = Time.time;          
             noClick++;
             if(noClick == 1)
             {
                 Anim.SetBool("AttackMelee", true);
                 Axe.isTrigger = true;
+                
             }
             noClick = Mathf.Clamp(noClick, 0, 3);
         }
@@ -401,6 +419,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
     public void DiceThrow()
     {
         _dice.ThrowDice();
@@ -418,6 +437,21 @@ public class PlayerController : MonoBehaviour
             Anim.SetBool("AttackMelee", false);
             noClick = 0;
         }
+    }
+
+    public void soundMelee()
+    {
+        meleeSound.Play();
+    }
+
+    public void axethrow()
+    {
+        throwAxeSound.Play();
+    }
+
+    public void jumpSound()
+    {
+       jump.Play();
     }
 
     public void Combo2()
