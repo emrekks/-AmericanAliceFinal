@@ -1287,8 +1287,8 @@ GameObject:
   - component: {fileID: 6647600177380606846}
   - component: {fileID: 6647600177380606722}
   - component: {fileID: 6647600177380606723}
-  - component: {fileID: 3810188730828176483}
   - component: {fileID: 6647600177380606724}
+  - component: {fileID: 3810188730828176483}
   - component: {fileID: 1833140101278096502}
   m_Layer: 0
   m_Name: AliceChar
@@ -1407,6 +1407,7 @@ MonoBehaviour:
   isAttackingStaff: 0
   isHandlingWand: 0
   staff: {fileID: 2323995106675752130}
+  staffAttackSound: {fileID: 0}
   Cam: {fileID: 0}
   Character: {fileID: 6647600177380606720}
   Axe: {fileID: 6647600178283927021}
@@ -1463,27 +1464,6 @@ MonoBehaviour:
   _axeController: {fileID: 6647600178283927022}
   hitedWall: 0
   AxeControllerIsHand: 1
---- !u!114 &3810188730828176483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5800756122079920664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  referance: {fileID: 0}
-  spawn: 0
-  cat: {fileID: 0}
-  textScreen: {fileID: 0}
-  text: {fileID: 0}
-  firstCalled: 0
-  level1: 1
-  level2: 0
-  npcLittle: 0
 --- !u!114 &6647600177380606724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1510,6 +1490,37 @@ MonoBehaviour:
   particleBlood: {fileID: 6647600177974882156}
   particleRing: {fileID: 6647600178128114522}
   ringObject: {fileID: 6647600178128114519}
+  hysteriaScream: {fileID: 0}
+  anim: {fileID: 0}
+--- !u!114 &3810188730828176483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800756122079920664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  referance: {fileID: 0}
+  spawn: 0
+  cat: {fileID: 0}
+  textScreen: {fileID: 0}
+  text: {fileID: 0}
+  firstCalled: 0
+  level1: 1
+  level2: 0
+  npcLittle: 0
+  levelUp: {fileID: 0}
+  welcome: {fileID: 0}
+  portal: {fileID: 0}
+  dungeon: {fileID: 0}
+  shrink: {fileID: 0}
+  tired: {fileID: 0}
+  anim: {fileID: 0}
+  shock: {fileID: 0}
 --- !u!114 &1833140101278096502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1542,14 @@ MonoBehaviour:
   level1: 1
   level2: 0
   npcLittle: 0
+  levelUp: {fileID: 0}
+  welcome: {fileID: 0}
+  portal: {fileID: 0}
+  dungeon: {fileID: 0}
+  shrink: {fileID: 0}
+  tired: {fileID: 0}
+  anim: {fileID: 0}
+  shock: {fileID: 0}
 --- !u!1 &5834693697845391382
 GameObject:
   m_ObjectHideFlags: 0

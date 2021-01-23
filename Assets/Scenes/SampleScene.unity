@@ -1773,7 +1773,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae220003d23d364fb12a2608637db19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 919132148832521432}
+  inPortaled: 0
+  bluePot: {fileID: 0}
+  redPot: {fileID: 0}
+  light1: {fileID: 0}
+  light2: {fileID: 0}
+  bossEnemy: {fileID: 0}
+  portal2: {fileID: 0}
 --- !u!4 &293473267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429004, guid: e5a9e0b66bb8a8b47a28819231a34fc2,
@@ -6121,7 +6127,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -7928,7 +7934,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9bfe82ba76958754f882883a9fa39b4c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11367,7 +11373,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab5387774f167f645816d1b3fce78427, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -17912,7 +17918,7 @@ PrefabInstance:
     - target: {fileID: 3683272059114178735, guid: 43c81945862e89b4188a4833ffc5d46c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7890185
+      value: 0.78901845
       objectReference: {fileID: 0}
     - target: {fileID: 3683272059114178735, guid: 43c81945862e89b4188a4833ffc5d46c,
         type: 3}
@@ -17927,7 +17933,7 @@ PrefabInstance:
     - target: {fileID: 3683272059114178735, guid: 43c81945862e89b4188a4833ffc5d46c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.042039193
+      value: 0.0420392
       objectReference: {fileID: 0}
     - target: {fileID: 3683272059142861644, guid: 43c81945862e89b4188a4833ffc5d46c,
         type: 3}
