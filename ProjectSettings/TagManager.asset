@@ -26,6 +26,7 @@ TagManager:
   - Npc
   - NpcLittle
   - Level2
+  - PortalReferance
   layers:
   - Default
   - TransparentFX
