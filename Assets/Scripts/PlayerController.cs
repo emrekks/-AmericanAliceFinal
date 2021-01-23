@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
 
     //Health
     public int playerHealth = 100;
-    private bool playerDead = false;
+    public bool playerDead = false;
+    public HealthBar healthBar;
 
     //Dice
     public GameObject weaponDice;
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed = 3.0f;
     private float jumpHeight = 6f;
     private bool crouch = false;
-    private Vector3 moveDir;
+    public Vector3 moveDir;
     private int jumpCount = 1;
 
     //Gravity
@@ -126,6 +127,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        healthBar.SetHealth(playerHealth);
         string sceneName = m_Scene.name;
 
         if (Input.GetKeyDown(KeyCode.T))
@@ -261,7 +263,7 @@ public class PlayerController : MonoBehaviour
         
 
 
-        Debug.Log(_glideScript.GlideBool);
+
 
         //Dice
         if (Input.GetMouseButtonDown(0) && isChangingHandToDice == true)

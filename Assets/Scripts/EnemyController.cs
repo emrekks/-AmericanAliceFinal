@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
 
     public float enemyAttackTimer = 0f;
     private bool isAttack = false;
-    private bool isBlock = false;
+    //private bool isBlock = false;
 
     public Collider axeCol;
     public Collider ballCol;
@@ -49,15 +49,15 @@ public class EnemyController : MonoBehaviour
     private EnemyController enemyController;
 
     
-    //Enemy Block Radius
-    private bool isBlocking = false;
-    private bool playerCanAttack = false;
-    private float playerCanAttackRadius = 6f;
+    ////Enemy Block Radius
+    //private bool isBlocking = false;
+    //private bool playerCanAttack = false;
+    //private float playerCanAttackRadius = 6f;
 
-    //Enemy Move Radius
-    private float moveTimer = 0f;
-    private float moveX = -10;
-    private float moveY = 10;
+    ////Enemy Move Radius
+    //private float moveTimer = 0f;
+    //private float moveX = -10;
+    //private float moveY = 10;
 
     //Enemy Trigger Radius
     public float lookRadius = 50f;
