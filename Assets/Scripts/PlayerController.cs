@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
     public bool isAttackingStaff = false;
     public bool isHandlingWand = false;
     public GameObject staff;
+    public AudioSource staffAttackSound;
 
     //Objects
     public Transform Cam;
@@ -322,7 +323,8 @@ public class PlayerController : MonoBehaviour
             {
                 isAttackingStaff = true;
                 Anim.SetTrigger("Magic");
-                delay = shootDelay; 
+                delay = shootDelay;
+                staffAttackSound.Play();
             }
             isAttackingStaff = false;
         }
