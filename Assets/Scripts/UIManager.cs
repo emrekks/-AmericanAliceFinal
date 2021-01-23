@@ -54,4 +54,9 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(levelName);
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }
