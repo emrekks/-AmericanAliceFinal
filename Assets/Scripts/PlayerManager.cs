@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject player;
 
-    [SerializeField]private float destroyTimer = 0f;
+    [SerializeField] private float destroyTimer = 0f;
 
     public bool heIsDead = false;
     void Update()
@@ -28,9 +28,9 @@ public class PlayerManager : MonoBehaviour
         {
             heIsDead = true;
         }
-        
-        
-        
+
+
+
         if (heIsDead == true)
         {
             destroyTimer += Time.deltaTime;
