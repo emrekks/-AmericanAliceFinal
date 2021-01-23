@@ -1288,6 +1288,7 @@ GameObject:
   - component: {fileID: 6647600177380606722}
   - component: {fileID: 6647600177380606723}
   - component: {fileID: 6647600177380606724}
+  - component: {fileID: 3266977999802260481}
   - component: {fileID: 3810188730828176483}
   - component: {fileID: 1833140101278096502}
   m_Layer: 0
@@ -1387,6 +1388,8 @@ MonoBehaviour:
   iceStaff: {fileID: 6647600177272145862}
   iceParticles: {fileID: 6647600179088966047}
   playerHealth: 1000
+  playerDead: 0
+  healthBar: {fileID: 0}
   weaponDice: {fileID: 6647600178193013940}
   DiceCount: 0
   isHandlingAxe: 1
@@ -1398,6 +1401,7 @@ MonoBehaviour:
   devilFormBigger: 0
   controller: {fileID: 6647600177380606720}
   playerSpeed: 3
+  moveDir: {x: 0, y: 0, z: 0}
   Groundcheck: {fileID: 6647600178423515620}
   groundRadius: 0.1
   whatIsGround:
@@ -1492,6 +1496,27 @@ MonoBehaviour:
   ringObject: {fileID: 6647600178128114519}
   hysteriaScream: {fileID: 0}
   anim: {fileID: 0}
+--- !u!114 &3266977999802260481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800756122079920664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b6adcdfd936ca438fb49d5952f51b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  dashSpeed: 0
+  dashTime: 0
+  _dash: {fileID: 0}
+  _dashobject: {fileID: 0}
+  SMD: {fileID: 0}
+  startTime: 0
+  weapon1: {fileID: 0}
+  weapon2: {fileID: 0}
 --- !u!114 &3810188730828176483
 MonoBehaviour:
   m_ObjectHideFlags: 0
