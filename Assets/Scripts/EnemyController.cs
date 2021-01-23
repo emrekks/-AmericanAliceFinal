@@ -222,7 +222,6 @@ public class EnemyController : MonoBehaviour
     void EnemyDeath()
     {
         isDead = true;
-        thisEnemyCollider.enabled = false;
         Anim.SetBool("death",isDead);
         // Anim.SetTrigger("death");
         enemyController.enabled = false;
