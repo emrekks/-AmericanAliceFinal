@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Textures.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Crosshair/CharAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Crosshair/CharAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Houses/Kiremit 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BrokenVector/Assets/Tutorial_LD/Materials/Houses/Kiremit 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Materials/909241e43cffbca0ba6bfd0d5107b4c3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Materials/909241e43cffbca0ba6bfd0d5107b4c3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tutorial_LD_LAST2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tutorial_LD_LAST2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/lamp_son_hali.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/lamp_son_hali.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,14 +22,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NpcLevel2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhinoAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelUp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RhinoEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Portal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EyeLook.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -48,7 +61,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -57,7 +70,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>

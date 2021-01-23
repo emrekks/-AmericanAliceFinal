@@ -39,7 +39,10 @@ public class HysteriaMode : MonoBehaviour
     private float Timer = 0f;
 
     #endregion
-    
+
+
+    public AudioSource hysteriaScream;
+    public Animator anim;
     
     void Update()
     {
@@ -56,6 +59,8 @@ public class HysteriaMode : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.H) && hysteriaOpen == false)
         {
+            anim.SetTrigger("Hysteria");
+            hysteriaScream.Play();
             RenderSettings.fogDensity = 0.06f;
             hysteriaOpen = true;
             particleBlood.Play();

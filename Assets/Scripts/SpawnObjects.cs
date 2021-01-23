@@ -24,6 +24,7 @@ public class SpawnObjects : MonoBehaviour
     public AudioSource dungeon;
     public AudioSource shrink;
     public AudioSource tired;
+    public Animator anim;
 
 
     void Start()
@@ -70,6 +71,7 @@ public class SpawnObjects : MonoBehaviour
                 firstCalled = true;
                 spawn = true;
                 welcome.Play();
+                anim.SetTrigger("DownBack");
             }
 
             if (firstCalled == true && level2 == true && npcLittle == false)
