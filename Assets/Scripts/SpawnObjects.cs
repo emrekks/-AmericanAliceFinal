@@ -25,6 +25,7 @@ public class SpawnObjects : MonoBehaviour
     public AudioSource shrink;
     public AudioSource tired;
     public Animator anim;
+    public AudioSource shock;
 
 
     void Start()
@@ -72,6 +73,7 @@ public class SpawnObjects : MonoBehaviour
                 spawn = true;
                 welcome.Play();
                 anim.SetTrigger("DownBack");
+                shock.Play();
             }
 
             if (firstCalled == true && level2 == true && npcLittle == false)

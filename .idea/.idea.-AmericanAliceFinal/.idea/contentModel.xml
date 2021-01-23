@@ -16,6 +16,7 @@
           <e p="DevilForm.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
           <e p="EyeLook.cs" t="Include" />
+          <e p="FallDown.cs" t="Include" />
           <e p="GlideScript.cs" t="Include" />
           <e p="HysteriaMode.cs" t="Include" />
           <e p="LevelUp.cs" t="Include" />
