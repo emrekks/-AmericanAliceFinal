@@ -202,7 +202,6 @@ public class EnemyController : MonoBehaviour
         {
             enemyHealth -= /*playerDamage*/ 50;
             EnemyHit();
-            UnityEngine.Debug.Log("Collider hit");
         }
 
     }
