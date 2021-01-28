@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AliceChar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AliceChar.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Kedicik.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Kedicik.prefab" afterDir="false" />
@@ -119,7 +120,7 @@
       <workItem from="1611360579256" duration="2671000" />
       <workItem from="1611365328402" duration="143000" />
       <workItem from="1611395917261" duration="1069000" />
-      <workItem from="1611832000527" duration="3591000" />
+      <workItem from="1611832000527" duration="4073000" />
     </task>
     <servers />
   </component>
