@@ -7385,6 +7385,11 @@ PrefabInstance:
       objectReference: {fileID: 72309044}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
       propertyPath: enemyHealth
       value: 100
       objectReference: {fileID: 0}
@@ -14092,6 +14097,11 @@ PrefabInstance:
       objectReference: {fileID: 72309044}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
       propertyPath: enemyHealth
       value: 100
       objectReference: {fileID: 0}
@@ -14630,6 +14640,11 @@ PrefabInstance:
       objectReference: {fileID: 72309044}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
       propertyPath: enemyHealth
       value: 100
       objectReference: {fileID: 0}
@@ -14813,6 +14828,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth
@@ -24266,6 +24286,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth
@@ -37298,6 +37323,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2094356367}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1453015459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 422760230778693681, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2094356367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453015457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0ab1cfdcf30d348a10ce4efdbd5672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1454438009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38921,6 +38958,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth
@@ -40766,6 +40808,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth
@@ -45413,6 +45460,11 @@ PrefabInstance:
       objectReference: {fileID: 72309044}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
       propertyPath: enemyHealth
       value: 100
       objectReference: {fileID: 0}
@@ -45525,6 +45577,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth
@@ -49214,6 +49271,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth
@@ -53855,32 +53917,32 @@ PrefabInstance:
     - target: {fileID: 422760231701333781, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4199219
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 422760231701333781, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8725586
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 422760231701333781, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99526083
+      value: 0.78713864
       objectReference: {fileID: 0}
     - target: {fileID: 422760231701333781, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09724157
+      value: -0.07690707
       objectReference: {fileID: 0}
     - target: {fileID: 422760231701333781, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000018351296
+      value: 0.6090624
       objectReference: {fileID: 0}
     - target: {fileID: 422760231701333781, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000047323057
+      value: 0.059508186
       objectReference: {fileID: 0}
     - target: {fileID: 422760232156828783, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
@@ -53897,6 +53959,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 4180.8823
       objectReference: {fileID: 0}
+    - target: {fileID: 2399794723324902976, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2794327348454653611, guid: 7cbb0dac754f5e3429cc031ab0fddccf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -54086,6 +54153,11 @@ PrefabInstance:
       propertyPath: ballCol
       value: 
       objectReference: {fileID: 72309044}
+    - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
+        type: 3}
+      propertyPath: _Hysteria
+      value: 
+      objectReference: {fileID: 1453015459}
     - target: {fileID: 2634670269033560332, guid: 99bc4278e527004489571d3b38297915,
         type: 3}
       propertyPath: enemyHealth

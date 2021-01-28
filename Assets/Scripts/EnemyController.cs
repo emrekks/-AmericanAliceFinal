@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
 
 
    
-
+    public HysteriaMode _Hysteria;
     public bool playerSeen = false;
 
     public Animator Anim;
@@ -200,8 +200,16 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.tag == "Axe" || other.gameObject.tag == "MagicBall")
         {
-            enemyHealth -= /*playerDamage*/ 50;
-            EnemyHit();
+            if (!_Hysteria.hysteriaOpen)
+            {
+                enemyHealth -= /*playerDamage*/ 50;
+                EnemyHit();
+            }
+            else
+            {
+                enemyHealth -= /*playerDamage*/ 500;
+                EnemyHit();
+            }
         }
 
     }
@@ -210,9 +218,20 @@ public class EnemyController : MonoBehaviour
     {
         if (other.tag == "Axe")
         {
-            enemyHealth -= /*playerDamage*/ 50;
-            EnemyHit();
+            if(!_Hysteria.hysteriaOpen)
+            {
+                enemyHealth -= /*playerDamage*/ 50;
+                EnemyHit();
+            }
+            else
+            {
+                enemyHealth -= /*playerDamage*/ 500;
+                EnemyHit();
+            }
+           
         }
+
+        
 
     }
 
