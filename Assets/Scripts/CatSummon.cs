@@ -6,11 +6,13 @@ public class CatSummon : MonoBehaviour
 {
 
     public Animator catAnim;
-    
-    
-    
-    
-    
+
+    public SpawnObjects spawnObjects; 
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +23,13 @@ public class CatSummon : MonoBehaviour
     void Update()
     {
         
+    }
+    
+    public void CatFade()
+    {
+        spawnObjects.cat.SetActive(false);
+        spawnObjects.textScreen.SetActive(false);
+        spawnObjects.Timer = 0f;
+        spawnObjects.spawn = false;
     }
 }

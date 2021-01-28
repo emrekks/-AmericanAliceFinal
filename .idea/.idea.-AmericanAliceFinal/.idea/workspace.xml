@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="" />
+    <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/catsummon.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/catsummon.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CatSummon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CatSummon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cat.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cat.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/catfade.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/catfade.anim" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +37,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/DevilForm.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" />
       <option value="$PROJECT_DIR$/Assets/CatSummon.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/CatSummon.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
     </changedPaths>
   </component>
@@ -114,6 +123,7 @@
       <workItem from="1611395917261" duration="1069000" />
       <workItem from="1611832000527" duration="4073000" />
       <workItem from="1611846826658" duration="7000" />
+      <workItem from="1611852891547" duration="2018000" />
     </task>
     <servers />
   </component>

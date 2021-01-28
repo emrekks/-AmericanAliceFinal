@@ -8,10 +8,12 @@ using UnityEngine.UI;
 public class SpawnObjects : MonoBehaviour
 {
 
-    public CatSummon catSummon;
+    // public CatSummon catSummon;
+    // private bool catFade = false;
+    // private bool _catSummon = false;
     public GameObject referance;
     public bool spawn = false;
-    private float Timer = 0f;
+    public float Timer = 0f;
     public GameObject cat;
     public GameObject textScreen;
     public TextMeshProUGUI text;
@@ -27,6 +29,7 @@ public class SpawnObjects : MonoBehaviour
     public AudioSource tired;
     public Animator anim;
     public AudioSource shock;
+    public Animator catAnim;
 
 
     void Start()
@@ -46,11 +49,8 @@ public class SpawnObjects : MonoBehaviour
 
             if (Timer >= 10f)
             {
-                catSummon.catAnim.SetTrigger("fade");
-                cat.SetActive(false);
-                textScreen.SetActive(false);
-                Timer = 0f;
-                spawn = false;
+                catAnim.SetTrigger("fade");
+                
             }
 
         }
@@ -60,7 +60,7 @@ public class SpawnObjects : MonoBehaviour
         {
 
             cat.transform.position = referance.transform.position;
-            catSummon.catAnim.SetTrigger("summon");
+            catAnim.SetTrigger("summon");
 
             if (firstCalled == true && level1 == true && npcLittle == false && level2 == false)
             {
@@ -92,7 +92,7 @@ public class SpawnObjects : MonoBehaviour
                 firstCalled = true;
                 spawn = true;
                 dungeon.Play();
-                
+
             }
 
             if (npcLittle == true)
@@ -122,12 +122,7 @@ public class SpawnObjects : MonoBehaviour
         {
             npcLittle = false;
         }
-
-
-
-        // void SpawnIt()
-        // {
-        //     Instantiate(cat, referance.transform.position, Quaternion.identity);
-        // }
     }
+
+    
 }
