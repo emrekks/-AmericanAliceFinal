@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SpawnObjects : MonoBehaviour
 {
 
+    public CatSummon catSummon;
     public GameObject referance;
     public bool spawn = false;
     private float Timer = 0f;
@@ -45,6 +46,7 @@ public class SpawnObjects : MonoBehaviour
 
             if (Timer >= 10f)
             {
+                catSummon.catAnim.SetTrigger("fade");
                 cat.SetActive(false);
                 textScreen.SetActive(false);
                 Timer = 0f;
@@ -58,6 +60,7 @@ public class SpawnObjects : MonoBehaviour
         {
 
             cat.transform.position = referance.transform.position;
+            catSummon.catAnim.SetTrigger("summon");
 
             if (firstCalled == true && level1 == true && npcLittle == false && level2 == false)
             {

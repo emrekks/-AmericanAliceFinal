@@ -1288,9 +1288,9 @@ GameObject:
   - component: {fileID: 6647600177380606722}
   - component: {fileID: 6647600177380606723}
   - component: {fileID: 6647600177380606724}
+  - component: {fileID: 2484096829483794059}
+  - component: {fileID: 4115605064836198793}
   - component: {fileID: 3266977999802260481}
-  - component: {fileID: 3810188730828176483}
-  - component: {fileID: 1833140101278096502}
   m_Layer: 0
   m_Name: AliceChar
   m_TagString: Player
@@ -1494,6 +1494,49 @@ MonoBehaviour:
   pprocess: {fileID: 2256723358083078356}
   hysteriaScream: {fileID: 0}
   anim: {fileID: 0}
+--- !u!114 &2484096829483794059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800756122079920664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catSummon: {fileID: 0}
+  referance: {fileID: 3845996505342041108}
+  spawn: 0
+  cat: {fileID: 0}
+  textScreen: {fileID: 0}
+  text: {fileID: 0}
+  firstCalled: 0
+  level1: 1
+  level2: 0
+  npcLittle: 0
+  levelUp: {fileID: 4115605064836198793}
+  welcome: {fileID: 0}
+  portal: {fileID: 0}
+  dungeon: {fileID: 0}
+  shrink: {fileID: 0}
+  tired: {fileID: 0}
+  anim: {fileID: 6647600177380606847}
+  shock: {fileID: 0}
+--- !u!114 &4115605064836198793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5800756122079920664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eecb93424d6ed5408bf5f6ae0e253e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnObjects: {fileID: 2484096829483794059}
 --- !u!114 &3266977999802260481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,64 +1559,6 @@ MonoBehaviour:
   weapon1: {fileID: 0}
   weapon2: {fileID: 0}
   dashAudio: {fileID: 0}
---- !u!114 &3810188730828176483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5800756122079920664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  referance: {fileID: 0}
-  spawn: 0
-  cat: {fileID: 0}
-  textScreen: {fileID: 0}
-  text: {fileID: 0}
-  firstCalled: 0
-  level1: 1
-  level2: 0
-  npcLittle: 0
-  levelUp: {fileID: 0}
-  welcome: {fileID: 0}
-  portal: {fileID: 0}
-  dungeon: {fileID: 0}
-  shrink: {fileID: 0}
-  tired: {fileID: 0}
-  anim: {fileID: 0}
-  shock: {fileID: 0}
---- !u!114 &1833140101278096502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5800756122079920664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d51689430106d1449bab0e3e092f933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  referance: {fileID: 0}
-  spawn: 0
-  cat: {fileID: 0}
-  textScreen: {fileID: 0}
-  text: {fileID: 0}
-  firstCalled: 0
-  level1: 1
-  level2: 0
-  npcLittle: 0
-  levelUp: {fileID: 0}
-  welcome: {fileID: 0}
-  portal: {fileID: 0}
-  dungeon: {fileID: 0}
-  shrink: {fileID: 0}
-  tired: {fileID: 0}
-  anim: {fileID: 0}
-  shock: {fileID: 0}
 --- !u!1 &5834693697845391382
 GameObject:
   m_ObjectHideFlags: 0
