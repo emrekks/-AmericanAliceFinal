@@ -3,13 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="8b680f16-9480-443a-9e59-b3e8b13b4d71" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.-AmericanAliceFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/L_FG_Assets_Pack_Lite/Demo/Demo6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/L_FG_Assets_Pack_Lite/Demo/Demo6.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AimLockAnimationMain.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AimLockAnimationMain.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AliceChar.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AliceChar.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Cat1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Cat1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Skitters_with_Eye_Default_color.tga.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Skitters_with_Eye_Default_color.tga.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Kedicik.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Kedicik.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial_LD.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial_LD.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +37,11 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/SpawnObjects.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/WandEquip.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Portal.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DevilForm.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/HysteriaMode.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1lT4qyq9qIQkh1lpQ8BBp5JsXSA" />
@@ -119,6 +123,8 @@
       <workItem from="1611356659780" duration="1229000" />
       <workItem from="1611360579256" duration="2671000" />
       <workItem from="1611365328402" duration="143000" />
+      <workItem from="1611395917261" duration="1069000" />
+      <workItem from="1611832000527" duration="1169000" />
     </task>
     <servers />
   </component>

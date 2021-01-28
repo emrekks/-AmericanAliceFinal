@@ -26,6 +26,7 @@
           <e p="GlideScript.cs" t="Include" />
           <e p="HealthBar.cs" t="Include" />
           <e p="HysteriaMode.cs" t="Include" />
+          <e p="LastLevelPortal.cs" t="Include" />
           <e p="LevelUp.cs" t="Include" />
           <e p="NpcLevel2.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
@@ -36,6 +37,7 @@
           <e p="RhinoEnemy.cs" t="Include" />
           <e p="SeeHiddenObject.cs" t="Include" />
           <e p="SpawnObjects.cs" t="Include" />
+          <e p="TeleportingWorld.cs" t="Include" />
           <e p="ThrowAxe.cs" t="Include" />
           <e p="ThrowingDice.cs" t="Include" />
           <e p="Thunder.cs" t="Include" />

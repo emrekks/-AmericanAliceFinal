@@ -5,24 +5,7 @@ using UnityEngine;
 public class HysteriaMode : MonoBehaviour
 {
 
-    #region HysteriaColor
     
-    public Material environmentMat;
-    public Material playerMat;
-    public Material enemyMat;
-    
-    public Material environmentHisMat;
-    public Material playerHisMat;
-    public Material enemyHisMat;
-
-    //public MeshRenderer player;
-    public MeshRenderer enemy;
-    public MeshRenderer environment;
-
-    public SkinnedMeshRenderer player;
-    
-    #endregion
-
     #region HysteriaTimer
 
     public bool hysteriaOpen;
@@ -41,6 +24,7 @@ public class HysteriaMode : MonoBehaviour
     #endregion
 
 
+    public GameObject pprocess;
     public AudioSource hysteriaScream;
     public Animator anim;
     
@@ -65,10 +49,8 @@ public class HysteriaMode : MonoBehaviour
             hysteriaOpen = true;
             particleBlood.Play();
             particleRingOpen = true;
-            player.material = playerHisMat;
-            enemy.material = enemyHisMat;
-            environment.material = environmentHisMat;
-            
+            pprocess.gameObject.SetActive(true);
+
         }
 
         if (hysteriaOpen == true)
@@ -78,13 +60,11 @@ public class HysteriaMode : MonoBehaviour
             
             if (hysteriaTimer >= 5f)
             {
-                player.material = playerMat;
-                enemy.material = enemyMat;
-                environment.material = environmentMat;
                 RenderSettings.fogDensity = 0f;
                 particleRingOpen = false;
                 hysteriaTimer = 0f;
                 hysteriaOpen = false;
+                pprocess.gameObject.SetActive(false);
             }
         }
     }
