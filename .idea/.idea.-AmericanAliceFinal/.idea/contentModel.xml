@@ -7,7 +7,6 @@
       <e p="-AmericanAliceFinal.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CatSummon.cs" t="Include" />
         <e p="L_FG_Assets_Pack_Lite" t="Include">
           <e p="Demo" t="Include">
             <e p="Read me01.txt" t="Include" />
@@ -18,7 +17,9 @@
           <e p="AudioManager.cs" t="Include" />
           <e p="AutoAim.cs" t="Include" />
           <e p="AxeController.cs" t="Include" />
+          <e p="CatSummon.cs" t="Include" />
           <e p="Cinematic.cs" t="Include" />
+          <e p="Crosshairr.cs" t="Include" />
           <e p="Dash.cs" t="Include" />
           <e p="DevilForm.cs" t="Include" />
           <e p="EnemyController.cs" t="Include" />
